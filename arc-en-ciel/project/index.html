@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arc en Ciel — Event Planner & Designer</title>
+  <meta name="description" content="Maison événementielle exclusive. L'audace au service du sens. Des expériences sur mesure pour les entreprises haut de gamme." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="image-slot.js"></script>
+</head>
+<body>
+
+  <!-- ========== Top bar ========== -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar__left">
+        <span><b>·</b> Atelier sur rendez-vous · 14 rue de l'Hibiscus, Casablanca</span>
+        <span><b>·</b> Devis sous 48h</span>
+      </div>
+      <div class="topbar__right">
+        <a href="#">+212 6 12 34 56 78</a>
+        <a href="#">hello@arc-en-ciel.com</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Nav ========== -->
+  <nav class="nav" id="nav">
+    <div class="wrap">
+      <ul class="nav__menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio" class="is-active">Réalisations</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#about">Maison</a></li>
+      </ul>
+      <a href="#" class="nav__brand" aria-label="Arc en Ciel — Accueil">
+        <img src="assets/logo-full.jpg" alt="Arc en Ciel — Event Planner Designer" />
+      </a>
+      <div class="nav__right">
+        <span class="nav__lang"><b>FR</b><span>/</span>EN</span>
+        <a href="#contact" class="nav__cta">
+          Demander un devis
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+        <button class="nav__burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Mobile drawer ========== -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <span class="drawer__num">— Menu</span>
+    <button class="drawer__close" id="drawerClose" aria-label="Fermer">✕</button>
+    <ul class="drawer__menu">
+      <li><a href="#services"><span class="num">01</span> Services</a></li>
+      <li><a href="#portfolio"><span class="num">02</span> Réalisations</a></li>
+      <li><a href="#methode"><span class="num">03</span> Méthode</a></li>
+      <li><a href="#about"><span class="num">04</span> Maison</a></li>
+      <li><a href="#contact"><span class="num">05</span> Contact</a></li>
+    </ul>
+    <div class="drawer__foot">
+      <div>
+        <h6>Atelier</h6>
+        14 rue de l'Hibiscus<br />20 100 Casablanca
+      </div>
+      <div>
+        <h6>Contact</h6>
+        hello@arc-en-ciel.com<br />+212 6 12 34 56 78
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" data-screen-label="Hero">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel is-current">Maison</span>
+        <span class="vlabel">Signature</span>
+        <span class="vlabel">2025</span>
+      </div>
+      <span class="num">01</span>
+    </aside>
+
+    <div class="hero__copy">
+      <div class="hero__eyebrow-row">
+        <span class="eyebrow">Maison événementielle · Casablanca</span>
+        <span class="hero__breadcrumb"><b>Accueil</b> &nbsp;/&nbsp; Édition Hiver 2026</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="line"><span>Sublimer</span></span>
+        <span class="line"><span>l'<em>instant</em>,</span></span>
+        <span class="line"><span>valoriser l'unicité.</span></span>
+      </h1>
+
+      <p class="hero__sub">
+        Arc en Ciel est une maison événementielle exclusive. Nous orchestrons des expériences sur mesure, élégantes et profondément personnalisées, capables de traduire l'essence d'une marque en un moment rare et inoubliable.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#portfolio" class="btn btn--lg">
+          <span>Voir les réalisations</span>
+          <span class="arrow">
+            <svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
+          </span>
+        </a>
+        <a href="#contact" class="btn btn--lg btn--outline">
+          <span>Demander un devis</span>
+        </a>
+      </div>
+
+      <dl class="hero__meta">
+        <div>
+          <dt>120<em>+</em></dt>
+          <dd>Événements signés</dd>
+        </div>
+        <div>
+          <dt>14<em>ans</em></dt>
+          <dd>D'exception</dd>
+        </div>
+        <div>
+          <dt><em>3</em> villes</dt>
+          <dd>Casa · Paris · Marrakech</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero__media">
+      <image-slot id="hero-main" src="assets/imagery/01-hero-vermeil.svg" placeholder="Cliché signature : table d'honneur, mise en lumière chaude, vue d'ensemble"></image-slot>
+      <div class="hero__badge">
+        <small>Réalisation · Octobre 2025</small>
+        <b>Dîner « Maison Vermeil »</b>
+      </div>
+      <div class="hero__caption">
+        <span>Casablanca · Villa privée</span>
+        <span><b>01</b> / 08</span>
+      </div>
+    </div>
+
+    <div class="hero__monogram-bg"></div>
+  </header>
+
+  <!-- ========== Manifesto strip ========== -->
+  <section class="manifesto" aria-label="Manifeste">
+    <div class="manifesto__inner">
+      <span>Sublimer l'instant —</span><span class="sep"></span>
+      <span><em>L'égo s'efface, la marque s'exprime —</em></span><span class="sep"></span>
+      <span>Exclusivité · Élégance · Exigence —</span><span class="sep"></span>
+      <span><em>Créativité maîtrisée —</em></span><span class="sep"></span>
+      <span>Sublimer l'instant —</span><span class="sep"></span>
+      <span><em>L'égo s'efface, la marque s'exprime —</em></span><span class="sep"></span>
+      <span>Exclusivité · Élégance · Exigence —</span><span class="sep"></span>
+      <span><em>Créativité maîtrisée —</em></span><span class="sep"></span>
+    </div>
+  </section>
+
+  <!-- ========== Services ========== -->
+  <section class="section services" id="services" data-screen-label="Services">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Maison</span>
+        <span class="vlabel is-current">Services</span>
+        <span class="vlabel">Méthode</span>
+      </div>
+      <span class="num">02</span>
+    </aside>
+    <span class="section-num">02</span>
+
+    <div class="wrap">
+      <div class="section__inner">
+        <div class="sec-head reveal">
+          <div class="sec-head__left">
+            <span class="eyebrow">02 — Nos prestations</span>
+            <h2 class="h1 sec-head__title">L'art de <em>l'événement</em> sur mesure.</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lede">
+              Six domaines d'intervention, une seule exigence : faire de chaque rendez-vous une signature. Nos prestations se choisissent à la pièce ou en orchestration complète, toujours dessinées à l'image de votre marque.
+            </p>
+            <a href="#" class="link">
+              Notre catalogue complet
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="svc-grid">
+          <article class="svc reveal" data-d="1">
+            <div class="svc__top">
+              <span>01 — Signature</span>
+              <span class="ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2 L14.5 9 L22 9 L16 13.5 L18.5 21 L12 16.5 L5.5 21 L8 13.5 L2 9 L9.5 9 Z" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+            </div>
+            <h3 class="svc__title">Décoration <em>événementielle</em></h3>
+            <p class="svc__desc">Direction artistique complète : scénographie, mise en lumière, fleurs, mobilier d'exception. Chaque détail composé pour servir l'émotion.</p>
+            <div class="svc__tags">
+              <span>Scénographie</span><span>Floral</span><span>Lumière</span>
+            </div>
+            <a href="#" class="svc__more">
+              Découvrir
+              <span class="arrow">
+                <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="svc reveal" data-d="2">
+            <div class="svc__top">
+              <span>02 — Cérémonie</span>
+              <span class="ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="9" r="3.5" stroke="currentColor" stroke-width="1.2"/><circle cx="15.5" cy="9" r="3.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 20c0-3 2-5 7-5s7 2 7 5" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+            </div>
+            <h3 class="svc__title">Mariage <em>d'exception</em></h3>
+            <p class="svc__desc">De la demande à la nuit de noces — un accompagnement intime, soigné, qui sculpte la cérémonie à l'image de votre histoire.</p>
+            <div class="svc__tags">
+              <span>Cérémonie</span><span>Banquet</span><span>Coordination</span>
+            </div>
+            <a href="#" class="svc__more">
+              Découvrir
+              <span class="arrow">
+                <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="svc reveal" data-d="3">
+            <div class="svc__top">
+              <span>03 — Intime</span>
+              <span class="ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+            </div>
+            <h3 class="svc__title">Baby shower <em>& intime</em></h3>
+            <p class="svc__desc">Des célébrations d'instants doux — naissance, anniversaire, retrouvailles. La délicatesse comme principe directeur.</p>
+            <div class="svc__tags">
+              <span>Intimiste</span><span>Sur-mesure</span><span>Délicat</span>
+            </div>
+            <a href="#" class="svc__more">
+              Découvrir
+              <span class="arrow">
+                <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="svc reveal" data-d="1">
+            <div class="svc__top">
+              <span>04 — Corporate</span>
+              <span class="ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+            </div>
+            <h3 class="svc__title">Événements <em>corporate</em></h3>
+            <p class="svc__desc">Galas, lancements, conventions, dîners de prestige. Une scénographie qui devient vitrine subtile du pouvoir de votre marque.</p>
+            <div class="svc__tags">
+              <span>Gala</span><span>Lancement</span><span>VIP</span>
+            </div>
+            <a href="#" class="svc__more">
+              Découvrir
+              <span class="arrow">
+                <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="svc reveal" data-d="2">
+            <div class="svc__top">
+              <span>05 — Atelier</span>
+              <span class="ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-6 8 6v12M4 13h16M9 21V13" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+            </div>
+            <h3 class="svc__title">Décoration <em>intérieure</em></h3>
+            <p class="svc__desc">Mise en scène d'espaces de réception, vitrines, résidences privées. Nous prolongeons la signature au-delà de l'événement.</p>
+            <div class="svc__tags">
+              <span>Résidence</span><span>Hospitalité</span><span>Vitrines</span>
+            </div>
+            <a href="#" class="svc__more">
+              Découvrir
+              <span class="arrow">
+                <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="svc reveal" data-d="3">
+            <div class="svc__top">
+              <span>06 — Atelier</span>
+              <span class="ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="14" stroke="currentColor" stroke-width="1.2"/><path d="M3 11h18M8 7V3m8 4V3" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+            </div>
+            <h3 class="svc__title">Location <em>matériel</em></h3>
+            <p class="svc__desc">Mobilier d'exception, art de la table, structures sur-mesure. Un atelier de 800m² au service de votre vision.</p>
+            <div class="svc__tags">
+              <span>Mobilier</span><span>Art de la table</span><span>Structures</span>
+            </div>
+            <a href="#" class="svc__more">
+              Découvrir
+              <span class="arrow">
+                <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+              </span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Portfolio ========== -->
+  <section class="section portfolio" id="portfolio" data-screen-label="Portfolio">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Services</span>
+        <span class="vlabel is-current">Réalisations</span>
+        <span class="vlabel">Méthode</span>
+      </div>
+      <span class="num">03</span>
+    </aside>
+    <span class="section-num">03</span>
+
+    <div class="wrap">
+      <div class="section__inner">
+        <div class="sec-head reveal">
+          <div class="sec-head__left">
+            <span class="eyebrow">03 — Sélection 2024–2025</span>
+            <h2 class="h1 sec-head__title">Chaque <em>projet</em>, une œuvre unique.</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lede">
+              Une sélection rare de réalisations qui racontent notre obsession du détail. Pour découvrir l'intégralité du fonds — 120+ projets archivés — un échange privé est nécessaire.
+            </p>
+          </div>
+        </div>
+
+        <div class="pf-filters reveal">
+          <button class="is-active">Tous <span class="count">42</span></button>
+          <button>Mariage <span class="count">18</span></button>
+          <button>Corporate <span class="count">14</span></button>
+          <button>Baby shower <span class="count">6</span></button>
+          <button>Intérieur <span class="count">4</span></button>
+        </div>
+
+        <div class="pf-grid">
+          <article class="pf-item pf-item--xl reveal" data-d="1">
+            <image-slot id="pf-1" src="assets/imagery/02-mariage-tablescape.svg" placeholder="Mariage signature — table d'honneur, fleurs blanches & or"></image-slot>
+            <span class="pf-item__tag">Mariage</span>
+            <span class="pf-item__num">— 01</span>
+            <div class="pf-item__meta">
+              <b>Maison <em>Vermeil</em></b>
+              <small>Villa privée · Casablanca · 2025</small>
+            </div>
+          </article>
+
+          <article class="pf-item pf-item--md reveal" data-d="2">
+            <image-slot id="pf-2" src="assets/imagery/03-floral-sepia.svg" placeholder="Détail floral — fleurs séchées, monochrome maron"></image-slot>
+            <span class="pf-item__tag">Détail</span>
+            <span class="pf-item__num">— 02</span>
+            <div class="pf-item__meta">
+              <b>Floraison <em>Sépia</em></b>
+              <small>Composition signature · 2025</small>
+            </div>
+          </article>
+
+          <article class="pf-item pf-item--sm reveal" data-d="3">
+            <image-slot id="pf-3" src="assets/imagery/04-gala-corporate.svg" placeholder="Gala corporate — scène, éclairage chaud, marque visible"></image-slot>
+            <span class="pf-item__tag">Corporate</span>
+            <span class="pf-item__num">— 03</span>
+            <div class="pf-item__meta">
+              <b>Gala <em>Maison Mère</em></b>
+              <small>Hôtel particulier · Marrakech</small>
+            </div>
+          </article>
+
+          <article class="pf-item pf-item--wide reveal" data-d="1">
+            <image-slot id="pf-4" src="assets/imagery/05-ceremonie-canopy.svg" placeholder="Cérémonie sous chapiteau — vue d'ensemble, golden hour"></image-slot>
+            <span class="pf-item__tag">Cérémonie</span>
+            <span class="pf-item__num">— 04</span>
+            <div class="pf-item__meta">
+              <b>Cérémonie <em>Al-Hibiscus</em></b>
+              <small>Domaine privé · Casablanca</small>
+            </div>
+          </article>
+
+          <article class="pf-item pf-item--tall reveal" data-d="2">
+            <image-slot id="pf-5" src="assets/imagery/06-mariee-portrait.svg" placeholder="Portrait vertical — robe & décor, élégance pure"></image-slot>
+            <span class="pf-item__tag">Mariage</span>
+            <span class="pf-item__num">— 05</span>
+            <div class="pf-item__meta">
+              <b>Portrait <em>Mariée</em></b>
+              <small>Cérémonie privée · 2025</small>
+            </div>
+          </article>
+
+          <article class="pf-item pf-item--reg reveal" data-d="3">
+            <image-slot id="pf-6" src="assets/imagery/07-soiree-bougies.svg" placeholder="Mise en lumière du soir — bougies, table"></image-slot>
+            <span class="pf-item__tag">Soirée</span>
+            <span class="pf-item__num">— 06</span>
+            <div class="pf-item__meta">
+              <b>Dîner <em>Crépuscule</em></b>
+              <small>Résidence privée · Paris</small>
+            </div>
+          </article>
+
+          <article class="pf-item pf-item--reg reveal" data-d="4">
+            <image-slot id="pf-7" src="assets/imagery/08-baby-shower.svg" placeholder="Baby shower — pastel doux, suspensions florales"></image-slot>
+            <span class="pf-item__tag">Intime</span>
+            <span class="pf-item__num">— 07</span>
+            <div class="pf-item__meta">
+              <b>Naissance <em>Inès</em></b>
+              <small>Jardin privé · 2025</small>
+            </div>
+          </article>
+        </div>
+
+        <div class="pf-foot reveal">
+          <span style="font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--maron-soft);">— Sélection 7 / 120 réalisations.</span>
+          <a href="#" class="link link--light">
+            Accéder au fonds privé
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Méthode ========== -->
+  <section class="section process" id="methode" data-screen-label="Méthode">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Portfolio</span>
+        <span class="vlabel is-current">Méthode</span>
+        <span class="vlabel">Maison</span>
+      </div>
+      <span class="num">04</span>
+    </aside>
+    <span class="section-num">04</span>
+
+    <div class="wrap">
+      <div class="section__inner">
+        <div class="sec-head reveal">
+          <div class="sec-head__left">
+            <span class="eyebrow">04 — Notre méthode</span>
+            <h2 class="h1 sec-head__title">Cinq actes, <em>une partition</em>.</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lede">
+              Notre méthode ne s'arrête pas à la coordination — elle compose. Chaque projet suit cinq actes qui garantissent rigueur, exigence et liberté créative.
+            </p>
+          </div>
+        </div>
+
+        <div class="proc-grid">
+          <article class="proc reveal" data-d="1">
+            <div class="proc__step"><b>01</b><span>Écoute</span></div>
+            <h3 class="proc__title">Lecture <em>intime</em> de la marque.</h3>
+            <p class="proc__desc">Rencontre privée pour comprendre l'ADN, l'histoire, les codes. Aucune formule, aucun copier-coller.</p>
+            <span class="proc__time">Semaine 1</span>
+          </article>
+
+          <article class="proc reveal" data-d="2">
+            <div class="proc__step"><b>02</b><span>Vision</span></div>
+            <h3 class="proc__title">Composition <em>du récit</em>.</h3>
+            <p class="proc__desc">Direction artistique, moodboard, palette, casting de lieu. Une vision présentée en livre relié.</p>
+            <span class="proc__time">Semaines 2–4</span>
+          </article>
+
+          <article class="proc reveal" data-d="3">
+            <div class="proc__step"><b>03</b><span>Atelier</span></div>
+            <h3 class="proc__title">Production <em>artisanale</em>.</h3>
+            <p class="proc__desc">Fabrication sur-mesure dans notre atelier. Floral, mobilier, scénographie, signalétique.</p>
+            <span class="proc__time">Semaines 5–10</span>
+          </article>
+
+          <article class="proc reveal" data-d="4">
+            <div class="proc__step"><b>04</b><span>Mise en scène</span></div>
+            <h3 class="proc__title">Orchestration <em>du jour J</em>.</h3>
+            <p class="proc__desc">Équipe complète sur site, régie minutée, coordination invisible. Vous vivez, nous veillons.</p>
+            <span class="proc__time">Jour J</span>
+          </article>
+
+          <article class="proc reveal" data-d="5">
+            <div class="proc__step"><b>05</b><span>Archive</span></div>
+            <h3 class="proc__title">Mémoire <em>de l'instant</em>.</h3>
+            <p class="proc__desc">Livre d'archive photographique relié main. Une trace tangible de votre signature.</p>
+            <span class="proc__time">J+30</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Stats ========== -->
+  <section class="stats" data-screen-label="Chiffres">
+    <div class="wrap">
+      <div class="stats__head reveal">
+        <h2 class="h2"><span class="eyebrow" style="margin-bottom:18px;">05 — En quelques chiffres</span><br />Une <em>maison</em> rare.</h2>
+        <p class="lede">Quatorze ans d'exigence, une équipe resserrée, des partenaires triés sur le volet. Notre rareté est notre signature.</p>
+      </div>
+      <div class="stats__grid">
+        <div class="stat reveal" data-d="1">
+          <div class="stat__num" data-count="120">120<sup>+</sup></div>
+          <span class="stat__label">Événements signés</span>
+        </div>
+        <div class="stat reveal" data-d="2">
+          <div class="stat__num" data-count="14">14<em>ans</em></div>
+          <span class="stat__label">D'expérience</span>
+        </div>
+        <div class="stat reveal" data-d="3">
+          <div class="stat__num"><em>98</em>%</div>
+          <span class="stat__label">Clients revenants</span>
+        </div>
+        <div class="stat reveal" data-d="4">
+          <div class="stat__num">24<em>k</em>m²</div>
+          <span class="stat__label">D'atelier productif</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Editorial / About ========== -->
+  <section class="editorial" id="about" data-screen-label="Maison">
+    <div class="editorial__media">
+      <image-slot id="about" src="assets/imagery/09-fondatrice.svg" placeholder="Portrait éditorial de la fondatrice — atelier, lumière naturelle"></image-slot>
+      <div class="stamp">
+        <small>Maison fondée en</small>
+        <b>2012 — Casablanca</b>
+      </div>
+    </div>
+    <div class="editorial__copy">
+      <span class="eyebrow">06 — La maison</span>
+      <h2 class="h1">Une <em>signature</em>, jamais une formule.</h2>
+      <p class="editorial__quote">
+        « Arc en Ciel ne se contente pas de livrer un événement. Elle sculpte un récit, une atmosphère, une émotion. »
+      </p>
+
+      <div class="editorial__values">
+        <div class="editorial__val">
+          <span class="num">01</span>
+          <b>Exclusivité</b>
+          <span>Chaque création est taillée sur mesure, à l'image de votre entreprise.</span>
+        </div>
+        <div class="editorial__val">
+          <span class="num">02</span>
+          <b>Élégance</b>
+          <span>Rien n'est laissé au hasard. L'élégance ne crie pas — elle se ressent.</span>
+        </div>
+        <div class="editorial__val">
+          <span class="num">03</span>
+          <b>Exigence</b>
+          <span>Un sens aigu de la perfection, porté avec rigueur et maîtrise.</span>
+        </div>
+        <div class="editorial__val">
+          <span class="num">04</span>
+          <b>Créativité maîtrisée</b>
+          <span>L'audace au service du sens. Innover sans jamais dénaturer.</span>
+        </div>
+      </div>
+
+      <div class="editorial__sign">
+        <div class="editorial__sign-text">
+          <b>Yasmine El Idrissi</b>
+          <span>Fondatrice & directrice artistique</span>
+        </div>
+      </div>
+
+      <a href="#" class="link" style="margin-top: 8px;">
+        Notre histoire complète
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== Témoignages ========== -->
+  <section class="section testi" data-screen-label="Témoignages">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Maison</span>
+        <span class="vlabel is-current">Témoignages</span>
+        <span class="vlabel">Contact</span>
+      </div>
+      <span class="num">07</span>
+    </aside>
+    <span class="section-num">07</span>
+
+    <div class="wrap">
+      <div class="section__inner">
+        <div class="testi__head reveal">
+          <div>
+            <span class="eyebrow">07 — Témoignages</span>
+            <h2 class="h2" style="margin-top:18px;">Ce que <em>les marques</em> en disent.</h2>
+          </div>
+          <div class="testi__nav">
+            <button id="testiPrev" aria-label="Précédent">
+              <svg width="16" height="12" viewBox="0 0 14 10" fill="none"><path d="M13 5H1m0 0l4-4M1 5l4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+            </button>
+            <span class="count"><b id="testiCur">01</b> / <span id="testiTot">06</span></span>
+            <button id="testiNext" aria-label="Suivant">
+              <svg width="16" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testi__viewport reveal">
+          <div class="testi__track" id="testiTrack">
+            <article class="testi-card">
+              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
+              <small class="testi-card__event">Gala · 2025</small>
+              <p class="testi-card__quote">Un <em>moment</em> rare. Chaque détail portait la marque sans jamais la crier. Une signature à l'état pur.</p>
+              <div class="testi-card__author">
+                <div class="testi-card__avatar">CH</div>
+                <div>
+                  <b>Caroline H.</b>
+                  <small>Dir. Communication, Maison du Luxe</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
+              <small class="testi-card__event">Mariage · 2024</small>
+              <p class="testi-card__quote">L'équipe lit ce que vous ne dites pas. Le résultat dépasse <em>ce qu'on imaginait</em> — sans jamais nous trahir.</p>
+              <div class="testi-card__author">
+                <div class="testi-card__avatar">AB</div>
+                <div>
+                  <b>Aïcha B.</b>
+                  <small>Mariée · Casablanca</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
+              <small class="testi-card__event">Lancement · 2025</small>
+              <p class="testi-card__quote">Nous cherchions une <em>signature</em>, pas une décoration. Arc en Ciel a sculpté un moment qui restera dans la mémoire de nos invités.</p>
+              <div class="testi-card__author">
+                <div class="testi-card__avatar">MR</div>
+                <div>
+                  <b>Marc R.</b>
+                  <small>Dir. Marketing, Atelier Mercure</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
+              <small class="testi-card__event">Corporate · 2024</small>
+              <p class="testi-card__quote">Une rigueur qui se voit, une <em>poésie</em> qui se sent. Rare combinaison.</p>
+              <div class="testi-card__author">
+                <div class="testi-card__avatar">SK</div>
+                <div>
+                  <b>Sophie K.</b>
+                  <small>Fondatrice, Maison Verveine</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
+              <small class="testi-card__event">Baby shower · 2025</small>
+              <p class="testi-card__quote">La délicatesse incarnée. Pas un détail ne dépareillait — tout <em>conversait</em>.</p>
+              <div class="testi-card__author">
+                <div class="testi-card__avatar">NL</div>
+                <div>
+                  <b>Nora L.</b>
+                  <small>Cliente privée</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
+              <small class="testi-card__event">Dîner · 2025</small>
+              <p class="testi-card__quote">L'équipe disparaît, la marque <em>parle</em>. C'est exactement ce que nous attendions.</p>
+              <div class="testi-card__author">
+                <div class="testi-card__avatar">JT</div>
+                <div>
+                  <b>Julien T.</b>
+                  <small>CEO, Cabinet Mercure</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta" id="contact" data-screen-label="Contact">
+    <div class="wrap">
+      <div class="cta__inner reveal">
+        <span class="eyebrow cta__eyebrow">08 — Initier le dialogue</span>
+        <h2 class="cta__title">Confier un <em>moment</em>,<br/>commencer une <em>signature</em>.</h2>
+        <p class="cta__sub">
+          Nous étudions chaque demande en comité restreint. Un premier échange — confidentiel, sans engagement — pour décider si nos univers peuvent se rencontrer.
+        </p>
+        <div class="cta__ctas">
+          <a href="#" class="btn btn--lg" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
+            <span>Demander un devis</span>
+            <span class="arrow">
+              <svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+            </span>
+          </a>
+          <a href="#" class="btn btn--lg btn--ghost">
+            <span>Prendre rendez-vous</span>
+          </a>
+        </div>
+
+        <div class="cta__contact">
+          <div>
+            Atelier
+            <b>14 rue de l'Hibiscus<br />20 100 Casablanca</b>
+          </div>
+          <div>
+            Téléphone
+            <b>+212 6 12 34 56 78</b>
+          </div>
+          <div>
+            Courriel
+            <b>hello@arc-en-ciel.com</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__big">Arc en <em>Ciel</em>.</div>
+
+      <div class="foot__cols">
+        <div class="foot__col foot__about">
+          <div class="foot__brand">
+            <img src="assets/logo-full.jpg" alt="Arc en Ciel" />
+          </div>
+          <p>Maison événementielle exclusive. L'audace au service du sens — pour les entreprises et les âmes haut de gamme.</p>
+          <form class="foot__news" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Votre courriel" />
+            <button type="submit">S'abonner</button>
+          </form>
+        </div>
+
+        <div class="foot__col">
+          <h5>Maison</h5>
+          <ul>
+            <li><a href="#about">Notre histoire</a></li>
+            <li><a href="#">L'équipe</a></li>
+            <li><a href="#methode">Méthode</a></li>
+            <li><a href="#">Presse & distinctions</a></li>
+            <li><a href="#">Carrières</a></li>
+          </ul>
+        </div>
+
+        <div class="foot__col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Mariage</a></li>
+            <li><a href="#services">Corporate</a></li>
+            <li><a href="#services">Baby shower</a></li>
+            <li><a href="#services">Décoration intérieure</a></li>
+            <li><a href="#services">Location matériel</a></li>
+          </ul>
+        </div>
+
+        <div class="foot__col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="#">14 rue de l'Hibiscus<br />20 100 Casablanca</a></li>
+            <li><a href="#">+212 6 12 34 56 78</a></li>
+            <li><a href="#">hello@arc-en-ciel.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot__bottom">
+        <span>© 2026 Arc en Ciel — Tous droits réservés. Édition Hiver 2026.</span>
+        <div class="foot__socials">
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M11 7c2 0 4 1 4 3.5s-1.5 4-3.5 4c-1 0-1.5-.5-1.5-.5L9 19" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 10v7m0-10v.01M11 17v-4a3 3 0 0 1 6 0v4M11 10v7" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 21l1.5-4.5A8.5 8.5 0 1 1 8 19.5L3 21z" stroke="currentColor" stroke-width="1.4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Floating WhatsApp ========== -->
+  <a href="#" class="fab" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-1 1-1.3 2.3-.9 3.6.6 1.6 2.2 4.1 5.1 5.5 2.1 1 3 1.1 4 .9.7-.1 2-.9 2.3-1.7.3-.8.3-1.5.2-1.7 0-.1-.3-.2-.5-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.3-1.2c1.3.7 2.8 1.1 4.4 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+    <span class="fab__tip">Discuter sur WhatsApp</span>
+  </a>
+
+  <!-- ========== Scripts ========== -->
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Mobile drawer
+    const burger = document.getElementById("burger");
+    const drawer = document.getElementById("drawer");
+    const drawerClose = document.getElementById("drawerClose");
+    function toggleDrawer(open) {
+      const willOpen = open ?? !drawer.classList.contains("is-open");
+      drawer.classList.toggle("is-open", willOpen);
+      burger.classList.toggle("is-open", willOpen);
+      document.body.style.overflow = willOpen ? "hidden" : "";
+    }
+    burger?.addEventListener("click", () => toggleDrawer());
+    drawerClose?.addEventListener("click", () => toggleDrawer(false));
+    drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => toggleDrawer(false)));
+
+    // Testimonial carousel
+    const track = document.getElementById("testiTrack");
+    const prevBtn = document.getElementById("testiPrev");
+    const nextBtn = document.getElementById("testiNext");
+    const curEl = document.getElementById("testiCur");
+    const totEl = document.getElementById("testiTot");
+    const cards = track?.children ?? [];
+    const total = cards.length;
+    let idx = 0;
+    if (totEl) totEl.textContent = String(total).padStart(2, "0");
+
+    function visibleCount() {
+      const w = window.innerWidth;
+      if (w < 640) return 1;
+      if (w < 980) return 2;
+      return 3;
+    }
+    function update() {
+      const visible = visibleCount();
+      const maxIdx = Math.max(0, total - visible);
+      idx = Math.min(idx, maxIdx);
+      const cardW = cards[0]?.getBoundingClientRect().width ?? 0;
+      const gap = 24;
+      track.style.transform = `translateX(-${idx * (cardW + gap)}px)`;
+      curEl.textContent = String(idx + 1).padStart(2, "0");
+    }
+    prevBtn?.addEventListener("click", () => { idx = Math.max(0, idx - 1); update(); });
+    nextBtn?.addEventListener("click", () => {
+      const visible = visibleCount();
+      const maxIdx = Math.max(0, total - visible);
+      idx = idx >= maxIdx ? 0 : idx + 1;
+      update();
+    });
+    window.addEventListener("resize", update);
+    setTimeout(update, 100);
+
+    // Auto-advance carousel
+    let autoplay = setInterval(() => {
+      const visible = visibleCount();
+      const maxIdx = Math.max(0, total - visible);
+      idx = idx >= maxIdx ? 0 : idx + 1;
+      update();
+    }, 6000);
+    track?.addEventListener("mouseenter", () => clearInterval(autoplay));
+  </script>
+
+</body>
+</html>
