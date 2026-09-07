@@ -3,46 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arc en Ciel — Event Planner & Designer</title>
-  <meta name="description" content="Maison événementielle exclusive. L'audace au service du sens. Des expériences sur mesure pour les entreprises haut de gamme." />
+  <title>Arc en Ciel — Maison événementielle · Bafoussam & Paris</title>
+  <meta name="description" content="Maison événementielle née à Bafoussam, au Cameroun, avec une présence internationale à Paris. Direction artistique, conception et mise en scène d'expériences sur mesure." />
+  <meta name="theme-color" content="#FCFBF8" />
+  <link rel="canonical" href="https://arc-en-ciel-nu.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arc en Ciel — Maison événementielle · Bafoussam & Paris" />
+  <meta property="og:description" content="Une histoire née au Cameroun. Une signature qui voyage. Direction artistique, conception et mise en scène d'expériences sur mesure." />
+  <meta property="og:url" content="https://arc-en-ciel-nu.vercel.app/" />
+  <meta property="og:image" content="https://arc-en-ciel-nu.vercel.app/assets/logo-full.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="image-slot.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Arc en Ciel",
+    "description": "Maison événementielle : direction artistique, conception et mise en scène d'expériences sur mesure, entre Bafoussam (Cameroun) et Paris (France).",
+    "url": "https://arc-en-ciel-nu.vercel.app/",
+    "logo": "https://arc-en-ciel-nu.vercel.app/assets/logo-full.jpg",
+    "areaServed": ["CM", "FR"]
+  }
+  </script>
 </head>
 <body>
-
-  <!-- ========== Top bar ========== -->
-  <div class="topbar">
-    <div class="wrap">
-      <div class="topbar__left">
-        <span><b>·</b> Atelier sur rendez-vous · 14 rue de l'Hibiscus, Casablanca</span>
-        <span><b>·</b> Devis sous 48h</span>
-      </div>
-      <div class="topbar__right">
-        <a href="#">+212 6 12 34 56 78</a>
-        <a href="#">hello@arc-en-ciel.com</a>
-        <a href="#">Instagram</a>
-      </div>
-    </div>
-  </div>
 
   <!-- ========== Nav ========== -->
   <nav class="nav" id="nav">
     <div class="wrap">
-      <ul class="nav__menu">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio" class="is-active">Réalisations</a></li>
-        <li><a href="#methode">Méthode</a></li>
-        <li><a href="#about">Maison</a></li>
+      <ul class="nav__menu nav__menu--l">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
       </ul>
-      <a href="#" class="nav__brand" aria-label="Arc en Ciel — Accueil">
+      <a href="#top" class="nav__brand" aria-label="Arc en Ciel — Accueil">
         <img src="assets/logo-full.jpg" alt="Arc en Ciel — Event Planner Designer" />
       </a>
       <div class="nav__right">
-        <span class="nav__lang"><b>FR</b><span>/</span>EN</span>
-        <a href="#contact" class="nav__cta">
+        <ul class="nav__menu nav__menu--r">
+          <li><a href="a-propos.html">Maison</a></li>
+          <li><a href="international.html">International</a></li>
+        </ul>
+        <a href="contact.html?type=devis" class="nav__cta">
           Demander un devis
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
         </a>
@@ -58,26 +66,26 @@
     <span class="drawer__num">— Menu</span>
     <button class="drawer__close" id="drawerClose" aria-label="Fermer">✕</button>
     <ul class="drawer__menu">
-      <li><a href="#services"><span class="num">01</span> Services</a></li>
-      <li><a href="#portfolio"><span class="num">02</span> Réalisations</a></li>
-      <li><a href="#methode"><span class="num">03</span> Méthode</a></li>
-      <li><a href="#about"><span class="num">04</span> Maison</a></li>
+      <li><a href="services.html"><span class="num">01</span> Services</a></li>
+      <li><a href="realisations.html"><span class="num">02</span> Réalisations</a></li>
+      <li><a href="a-propos.html"><span class="num">03</span> Maison</a></li>
+      <li><a href="international.html"><span class="num">04</span> International</a></li>
       <li><a href="#contact"><span class="num">05</span> Contact</a></li>
     </ul>
     <div class="drawer__foot">
       <div>
-        <h6>Atelier</h6>
-        14 rue de l'Hibiscus<br />20 100 Casablanca
+        <h6>Cameroun</h6>
+        Bafoussam<br />+237 6 53 26 73 35
       </div>
       <div>
-        <h6>Contact</h6>
-        hello@arc-en-ciel.com<br />+212 6 12 34 56 78
+        <h6>Europe</h6>
+        Paris<br />+33 6 95 83 72 58
       </div>
     </div>
   </aside>
 
   <!-- ========== HERO ========== -->
-  <header class="hero" data-screen-label="Hero">
+  <header class="hero" id="top" data-screen-label="Hero">
     <aside class="sidebar-rail" aria-hidden="true">
       <span class="tag">ARC EN CIEL</span>
       <div class="vlabels">
@@ -90,8 +98,8 @@
 
     <div class="hero__copy">
       <div class="hero__eyebrow-row">
-        <span class="eyebrow">Maison événementielle · Casablanca</span>
-        <span class="hero__breadcrumb"><b>Accueil</b> &nbsp;/&nbsp; Édition Hiver 2026</span>
+        <span class="eyebrow">Maison événementielle · Bafoussam · Paris</span>
+        <span class="hero__breadcrumb"><b>Accueil</b> &nbsp;/&nbsp; La Maison</span>
       </div>
 
       <h1 class="hero__title">
@@ -111,36 +119,32 @@
             <svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
           </span>
         </a>
-        <a href="#contact" class="btn btn--lg btn--outline">
+        <a href="contact.html?type=devis" class="btn btn--lg btn--outline">
           <span>Demander un devis</span>
         </a>
       </div>
 
       <dl class="hero__meta">
         <div>
-          <dt>120<em>+</em></dt>
-          <dd>Événements signés</dd>
+          <dt>Bafoussam</dt>
+          <dd>Cameroun · L'ancrage</dd>
         </div>
         <div>
-          <dt>14<em>ans</em></dt>
-          <dd>D'exception</dd>
-        </div>
-        <div>
-          <dt><em>3</em> villes</dt>
-          <dd>Casa · Paris · Marrakech</dd>
+          <dt>Paris</dt>
+          <dd>France · L'ouverture</dd>
         </div>
       </dl>
     </div>
 
     <div class="hero__media">
-      <image-slot id="hero-main" src="assets/imagery/01-hero-vermeil.svg" placeholder="Cliché signature : table d'honneur, mise en lumière chaude, vue d'ensemble"></image-slot>
+      <image-slot id="hero-main" src="assets/imagery/01-hero-vermeil.svg" placeholder="Visuel signature Arc en Ciel — scénographie, mise en lumière"></image-slot>
       <div class="hero__badge">
-        <small>Réalisation · Octobre 2025</small>
-        <b>Dîner « Maison Vermeil »</b>
+        <small>La Maison</small>
+        <b>Direction artistique</b>
       </div>
       <div class="hero__caption">
-        <span>Casablanca · Villa privée</span>
-        <span><b>01</b> / 08</span>
+        <span>Bafoussam · Paris</span>
+        <span><b>Arc en Ciel</b></span>
       </div>
     </div>
 
@@ -185,7 +189,7 @@
             <p class="lede">
               Six domaines d'intervention, une seule exigence : faire de chaque rendez-vous une signature. Nos prestations se choisissent à la pièce ou en orchestration complète, toujours dessinées à l'image de votre marque.
             </p>
-            <a href="#" class="link">
+            <a href="services.html" class="link">
               Notre catalogue complet
               <span class="arrow">→</span>
             </a>
@@ -205,7 +209,7 @@
             <div class="svc__tags">
               <span>Scénographie</span><span>Floral</span><span>Lumière</span>
             </div>
-            <a href="#" class="svc__more">
+            <a href="services.html#decoration-evenementielle" class="svc__more">
               Découvrir
               <span class="arrow">
                 <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -225,7 +229,7 @@
             <div class="svc__tags">
               <span>Cérémonie</span><span>Banquet</span><span>Coordination</span>
             </div>
-            <a href="#" class="svc__more">
+            <a href="services.html#mariage" class="svc__more">
               Découvrir
               <span class="arrow">
                 <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -245,7 +249,7 @@
             <div class="svc__tags">
               <span>Intimiste</span><span>Sur-mesure</span><span>Délicat</span>
             </div>
-            <a href="#" class="svc__more">
+            <a href="services.html#baby-shower" class="svc__more">
               Découvrir
               <span class="arrow">
                 <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -265,7 +269,7 @@
             <div class="svc__tags">
               <span>Gala</span><span>Lancement</span><span>VIP</span>
             </div>
-            <a href="#" class="svc__more">
+            <a href="services.html#corporate" class="svc__more">
               Découvrir
               <span class="arrow">
                 <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -285,7 +289,7 @@
             <div class="svc__tags">
               <span>Résidence</span><span>Hospitalité</span><span>Vitrines</span>
             </div>
-            <a href="#" class="svc__more">
+            <a href="services.html#decoration-interieure" class="svc__more">
               Découvrir
               <span class="arrow">
                 <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -305,7 +309,7 @@
             <div class="svc__tags">
               <span>Mobilier</span><span>Art de la table</span><span>Structures</span>
             </div>
-            <a href="#" class="svc__more">
+            <a href="services.html#location-materiel" class="svc__more">
               Découvrir
               <span class="arrow">
                 <svg width="12" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -334,100 +338,104 @@
       <div class="section__inner">
         <div class="sec-head reveal">
           <div class="sec-head__left">
-            <span class="eyebrow">03 — Sélection 2024–2025</span>
+            <span class="eyebrow">03 — Notre univers</span>
             <h2 class="h1 sec-head__title">Chaque <em>projet</em>, une œuvre unique.</h2>
           </div>
           <div class="sec-head__aside">
             <p class="lede">
-              Une sélection rare de réalisations qui racontent notre obsession du détail. Pour découvrir l'intégralité du fonds — 120+ projets archivés — un échange privé est nécessaire.
+              Un aperçu de notre approche, domaine par domaine. Pour parcourir nos réalisations en détail, un échange privé est nécessaire.
             </p>
+            <a href="realisations.html" class="link">
+              Toutes les réalisations
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
 
-        <div class="pf-filters reveal">
-          <button class="is-active">Tous <span class="count">42</span></button>
-          <button>Mariage <span class="count">18</span></button>
-          <button>Corporate <span class="count">14</span></button>
-          <button>Baby shower <span class="count">6</span></button>
-          <button>Intérieur <span class="count">4</span></button>
+        <div class="pf-filters reveal" id="pfFilters">
+          <button class="is-active" data-cat="all">Tous <span class="count">7</span></button>
+          <button data-cat="mariage">Mariage <span class="count">3</span></button>
+          <button data-cat="corporate">Corporate <span class="count">1</span></button>
+          <button data-cat="baby-shower">Baby shower <span class="count">1</span></button>
+          <button data-cat="interieur">Intérieur <span class="count">2</span></button>
         </div>
 
         <div class="pf-grid">
-          <article class="pf-item pf-item--xl reveal" data-d="1">
+          <article class="pf-item pf-item--xl reveal" data-d="1" data-cat="mariage">
             <image-slot id="pf-1" src="assets/imagery/02-mariage-tablescape.svg" placeholder="Mariage signature — table d'honneur, fleurs blanches & or"></image-slot>
             <span class="pf-item__tag">Mariage</span>
             <span class="pf-item__num">— 01</span>
             <div class="pf-item__meta">
-              <b>Maison <em>Vermeil</em></b>
-              <small>Villa privée · Casablanca · 2025</small>
+              <b>Mariage <em>d'exception</em></b>
+              <small>Scénographie &amp; direction artistique</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--md reveal" data-d="2">
+          <article class="pf-item pf-item--md reveal" data-d="2" data-cat="interieur">
             <image-slot id="pf-2" src="assets/imagery/03-floral-sepia.svg" placeholder="Détail floral — fleurs séchées, monochrome maron"></image-slot>
             <span class="pf-item__tag">Détail</span>
             <span class="pf-item__num">— 02</span>
             <div class="pf-item__meta">
-              <b>Floraison <em>Sépia</em></b>
-              <small>Composition signature · 2025</small>
+              <b>Art <em>floral</em></b>
+              <small>Composition signature</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--sm reveal" data-d="3">
+          <article class="pf-item pf-item--sm reveal" data-d="3" data-cat="corporate">
             <image-slot id="pf-3" src="assets/imagery/04-gala-corporate.svg" placeholder="Gala corporate — scène, éclairage chaud, marque visible"></image-slot>
             <span class="pf-item__tag">Corporate</span>
             <span class="pf-item__num">— 03</span>
             <div class="pf-item__meta">
-              <b>Gala <em>Maison Mère</em></b>
-              <small>Hôtel particulier · Marrakech</small>
+              <b>Événement <em>corporate</em></b>
+              <small>Gala &amp; lancement de marque</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--wide reveal" data-d="1">
+          <article class="pf-item pf-item--wide reveal" data-d="1" data-cat="mariage">
             <image-slot id="pf-4" src="assets/imagery/05-ceremonie-canopy.svg" placeholder="Cérémonie sous chapiteau — vue d'ensemble, golden hour"></image-slot>
             <span class="pf-item__tag">Cérémonie</span>
             <span class="pf-item__num">— 04</span>
             <div class="pf-item__meta">
-              <b>Cérémonie <em>Al-Hibiscus</em></b>
-              <small>Domaine privé · Casablanca</small>
+              <b>Cérémonie <em>en plein air</em></b>
+              <small>Direction artistique &amp; mise en scène</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--tall reveal" data-d="2">
+          <article class="pf-item pf-item--tall reveal" data-d="2" data-cat="mariage">
             <image-slot id="pf-5" src="assets/imagery/06-mariee-portrait.svg" placeholder="Portrait vertical — robe & décor, élégance pure"></image-slot>
             <span class="pf-item__tag">Mariage</span>
             <span class="pf-item__num">— 05</span>
             <div class="pf-item__meta">
-              <b>Portrait <em>Mariée</em></b>
-              <small>Cérémonie privée · 2025</small>
+              <b>Mariage <em>intime</em></b>
+              <small>Décor &amp; art de la table</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--reg reveal" data-d="3">
+          <article class="pf-item pf-item--reg reveal" data-d="3" data-cat="interieur">
             <image-slot id="pf-6" src="assets/imagery/07-soiree-bougies.svg" placeholder="Mise en lumière du soir — bougies, table"></image-slot>
             <span class="pf-item__tag">Soirée</span>
             <span class="pf-item__num">— 06</span>
             <div class="pf-item__meta">
-              <b>Dîner <em>Crépuscule</em></b>
-              <small>Résidence privée · Paris</small>
+              <b>Dîner <em>privé</em></b>
+              <small>Mise en lumière du soir</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--reg reveal" data-d="4">
+          <article class="pf-item pf-item--reg reveal" data-d="4" data-cat="baby-shower">
             <image-slot id="pf-7" src="assets/imagery/08-baby-shower.svg" placeholder="Baby shower — pastel doux, suspensions florales"></image-slot>
             <span class="pf-item__tag">Intime</span>
             <span class="pf-item__num">— 07</span>
             <div class="pf-item__meta">
-              <b>Naissance <em>Inès</em></b>
-              <small>Jardin privé · 2025</small>
+              <b>Célébration <em>intime</em></b>
+              <small>Baby shower &amp; naissance</small>
             </div>
           </article>
         </div>
 
         <div class="pf-foot reveal">
-          <span style="font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--maron-soft);">— Sélection 7 / 120 réalisations.</span>
-          <a href="#" class="link link--light">
-            Accéder au fonds privé
+          <span style="font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--maron-deep);">— Un aperçu de notre univers.</span>
+          <a href="contact.html?type=fonds" class="link">
+            Parler de votre projet
             <span class="arrow">→</span>
           </a>
         </div>
@@ -502,29 +510,34 @@
     </div>
   </section>
 
-  <!-- ========== Stats ========== -->
-  <section class="stats" data-screen-label="Chiffres">
+  <!-- ========== International / Europe — teaser ========== -->
+  <!-- Renvoie vers la page dédiée international.html -->
+  <section class="section intl-teaser" id="international" data-screen-label="International">
     <div class="wrap">
-      <div class="stats__head reveal">
-        <h2 class="h2"><span class="eyebrow" style="margin-bottom:18px;">05 — En quelques chiffres</span><br />Une <em>maison</em> rare.</h2>
-        <p class="lede">Quatorze ans d'exigence, une équipe resserrée, des partenaires triés sur le volet. Notre rareté est notre signature.</p>
-      </div>
-      <div class="stats__grid">
-        <div class="stat reveal" data-d="1">
-          <div class="stat__num" data-count="120">120<sup>+</sup></div>
-          <span class="stat__label">Événements signés</span>
-        </div>
-        <div class="stat reveal" data-d="2">
-          <div class="stat__num" data-count="14">14<em>ans</em></div>
-          <span class="stat__label">D'expérience</span>
-        </div>
-        <div class="stat reveal" data-d="3">
-          <div class="stat__num"><em>98</em>%</div>
-          <span class="stat__label">Clients revenants</span>
-        </div>
-        <div class="stat reveal" data-d="4">
-          <div class="stat__num">24<em>k</em>m²</div>
-          <span class="stat__label">D'atelier productif</span>
+      <div class="intl-teaser__inner reveal">
+        <span class="eyebrow">05 — Arc en Ciel International</span>
+        <div class="intl-teaser__grid">
+          <h2 class="h1 intl-teaser__title">Une Maison. <em>Deux territoires.</em> Une signature.</h2>
+          <div class="intl-teaser__aside">
+            <p class="lede">
+              Née à Bafoussam, au Cameroun, Arc en Ciel accompagne désormais ses clients au Cameroun et en Europe — même direction artistique, même exigence, quel que soit le lieu de l'événement.
+            </p>
+            <div class="intl-route" aria-hidden="true">
+              <span class="intl-route__pt">
+                <b>Cameroun</b>
+                <small>Bafoussam</small>
+              </span>
+              <span class="intl-route__line"></span>
+              <span class="intl-route__pt intl-route__pt--eu">
+                <b>Europe</b>
+                <small>Paris</small>
+              </span>
+            </div>
+            <a href="international.html" class="link">
+              Découvrir Arc en Ciel International
+              <span class="arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -533,10 +546,10 @@
   <!-- ========== Editorial / About ========== -->
   <section class="editorial" id="about" data-screen-label="Maison">
     <div class="editorial__media">
-      <image-slot id="about" src="assets/imagery/09-fondatrice.svg" placeholder="Portrait éditorial de la fondatrice — atelier, lumière naturelle"></image-slot>
+      <image-slot id="about" src="assets/imagery/09-fondatrice.svg" placeholder="Portrait éditorial — la Maison, lumière naturelle"></image-slot>
       <div class="stamp">
-        <small>Maison fondée en</small>
-        <b>2012 — Casablanca</b>
+        <small>L'ancrage de la Maison</small>
+        <b>Bafoussam — Cameroun</b>
       </div>
     </div>
     <div class="editorial__copy">
@@ -571,131 +584,15 @@
 
       <div class="editorial__sign">
         <div class="editorial__sign-text">
-          <b>Yasmine El Idrissi</b>
-          <span>Fondatrice & directrice artistique</span>
+          <b>Fongué Yolande</b>
+          <span>Fondatrice &amp; Dirigeante · avec Mr Chris, Directeur Artistique</span>
         </div>
       </div>
 
-      <a href="#" class="link" style="margin-top: 8px;">
+      <a href="a-propos.html" class="link" style="margin-top: 8px;">
         Notre histoire complète
         <span class="arrow">→</span>
       </a>
-    </div>
-  </section>
-
-  <!-- ========== Témoignages ========== -->
-  <section class="section testi" data-screen-label="Témoignages">
-    <aside class="sidebar-rail" aria-hidden="true">
-      <span class="tag">ARC EN CIEL</span>
-      <div class="vlabels">
-        <span class="vlabel">Maison</span>
-        <span class="vlabel is-current">Témoignages</span>
-        <span class="vlabel">Contact</span>
-      </div>
-      <span class="num">07</span>
-    </aside>
-    <span class="section-num">07</span>
-
-    <div class="wrap">
-      <div class="section__inner">
-        <div class="testi__head reveal">
-          <div>
-            <span class="eyebrow">07 — Témoignages</span>
-            <h2 class="h2" style="margin-top:18px;">Ce que <em>les marques</em> en disent.</h2>
-          </div>
-          <div class="testi__nav">
-            <button id="testiPrev" aria-label="Précédent">
-              <svg width="16" height="12" viewBox="0 0 14 10" fill="none"><path d="M13 5H1m0 0l4-4M1 5l4 4" stroke="currentColor" stroke-width="1.2"/></svg>
-            </button>
-            <span class="count"><b id="testiCur">01</b> / <span id="testiTot">06</span></span>
-            <button id="testiNext" aria-label="Suivant">
-              <svg width="16" height="12" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="testi__viewport reveal">
-          <div class="testi__track" id="testiTrack">
-            <article class="testi-card">
-              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
-              <small class="testi-card__event">Gala · 2025</small>
-              <p class="testi-card__quote">Un <em>moment</em> rare. Chaque détail portait la marque sans jamais la crier. Une signature à l'état pur.</p>
-              <div class="testi-card__author">
-                <div class="testi-card__avatar">CH</div>
-                <div>
-                  <b>Caroline H.</b>
-                  <small>Dir. Communication, Maison du Luxe</small>
-                </div>
-              </div>
-            </article>
-
-            <article class="testi-card">
-              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
-              <small class="testi-card__event">Mariage · 2024</small>
-              <p class="testi-card__quote">L'équipe lit ce que vous ne dites pas. Le résultat dépasse <em>ce qu'on imaginait</em> — sans jamais nous trahir.</p>
-              <div class="testi-card__author">
-                <div class="testi-card__avatar">AB</div>
-                <div>
-                  <b>Aïcha B.</b>
-                  <small>Mariée · Casablanca</small>
-                </div>
-              </div>
-            </article>
-
-            <article class="testi-card">
-              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
-              <small class="testi-card__event">Lancement · 2025</small>
-              <p class="testi-card__quote">Nous cherchions une <em>signature</em>, pas une décoration. Arc en Ciel a sculpté un moment qui restera dans la mémoire de nos invités.</p>
-              <div class="testi-card__author">
-                <div class="testi-card__avatar">MR</div>
-                <div>
-                  <b>Marc R.</b>
-                  <small>Dir. Marketing, Atelier Mercure</small>
-                </div>
-              </div>
-            </article>
-
-            <article class="testi-card">
-              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
-              <small class="testi-card__event">Corporate · 2024</small>
-              <p class="testi-card__quote">Une rigueur qui se voit, une <em>poésie</em> qui se sent. Rare combinaison.</p>
-              <div class="testi-card__author">
-                <div class="testi-card__avatar">SK</div>
-                <div>
-                  <b>Sophie K.</b>
-                  <small>Fondatrice, Maison Verveine</small>
-                </div>
-              </div>
-            </article>
-
-            <article class="testi-card">
-              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
-              <small class="testi-card__event">Baby shower · 2025</small>
-              <p class="testi-card__quote">La délicatesse incarnée. Pas un détail ne dépareillait — tout <em>conversait</em>.</p>
-              <div class="testi-card__author">
-                <div class="testi-card__avatar">NL</div>
-                <div>
-                  <b>Nora L.</b>
-                  <small>Cliente privée</small>
-                </div>
-              </div>
-            </article>
-
-            <article class="testi-card">
-              <div class="testi-card__stars">★ ★ ★ ★ ★</div>
-              <small class="testi-card__event">Dîner · 2025</small>
-              <p class="testi-card__quote">L'équipe disparaît, la marque <em>parle</em>. C'est exactement ce que nous attendions.</p>
-              <div class="testi-card__author">
-                <div class="testi-card__avatar">JT</div>
-                <div>
-                  <b>Julien T.</b>
-                  <small>CEO, Cabinet Mercure</small>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -703,35 +600,35 @@
   <section class="cta" id="contact" data-screen-label="Contact">
     <div class="wrap">
       <div class="cta__inner reveal">
-        <span class="eyebrow cta__eyebrow">08 — Initier le dialogue</span>
+        <span class="eyebrow cta__eyebrow">07 — Initier le dialogue</span>
         <h2 class="cta__title">Confier un <em>moment</em>,<br/>commencer une <em>signature</em>.</h2>
         <p class="cta__sub">
           Nous étudions chaque demande en comité restreint. Un premier échange — confidentiel, sans engagement — pour décider si nos univers peuvent se rencontrer.
         </p>
         <div class="cta__ctas">
-          <a href="#" class="btn btn--lg" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
+          <a href="contact.html?type=devis" class="btn btn--lg" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
             <span>Demander un devis</span>
             <span class="arrow">
               <svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
             </span>
           </a>
-          <a href="#" class="btn btn--lg btn--ghost">
+          <a href="contact.html?type=rdv" class="btn btn--lg btn--ghost">
             <span>Prendre rendez-vous</span>
           </a>
         </div>
 
         <div class="cta__contact">
           <div>
-            Atelier
-            <b>14 rue de l'Hibiscus<br />20 100 Casablanca</b>
+            Cameroun — Fongué Yolande
+            <b>Bafoussam, Cameroun<br /><a href="tel:+237653267335">+237 6 53 26 73 35</a></b>
           </div>
           <div>
-            Téléphone
-            <b>+212 6 12 34 56 78</b>
+            Europe — Mr Chris
+            <b>Paris, France<br /><a href="tel:+33695837258">+33 6 95 83 72 58</a></b>
           </div>
           <div>
             Courriel
-            <b>hello@arc-en-ciel.com</b>
+            <b>[EMAIL OFFICIEL À AJOUTER]</b>
           </div>
         </div>
       </div>
@@ -748,58 +645,61 @@
           <div class="foot__brand">
             <img src="assets/logo-full.jpg" alt="Arc en Ciel" />
           </div>
-          <p>Maison événementielle exclusive. L'audace au service du sens — pour les entreprises et les âmes haut de gamme.</p>
-          <form class="foot__news" onsubmit="event.preventDefault()">
-            <input type="email" placeholder="Votre courriel" />
+          <p>Maison événementielle. Une histoire née à Bafoussam, au Cameroun — une signature qui voyage jusqu'à Paris.</p>
+          <form class="foot__news" onsubmit="event.preventDefault(); this.classList.add('is-done');">
+            <input type="email" placeholder="Votre courriel" required />
             <button type="submit">S'abonner</button>
+            <span class="foot__news__ok">Merci — inscription enregistrée.</span>
           </form>
         </div>
 
         <div class="foot__col">
-          <h5>Maison</h5>
+          <h5>Navigation</h5>
           <ul>
-            <li><a href="#about">Notre histoire</a></li>
-            <li><a href="#">L'équipe</a></li>
-            <li><a href="#methode">Méthode</a></li>
-            <li><a href="#">Presse & distinctions</a></li>
-            <li><a href="#">Carrières</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="a-propos.html">Maison</a></li>
+            <li><a href="international.html">International</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div class="foot__col">
-          <h5>Services</h5>
+          <h5>Cameroun — Bafoussam</h5>
           <ul>
-            <li><a href="#services">Mariage</a></li>
-            <li><a href="#services">Corporate</a></li>
-            <li><a href="#services">Baby shower</a></li>
-            <li><a href="#services">Décoration intérieure</a></li>
-            <li><a href="#services">Location matériel</a></li>
+            <li><a href="tel:+237653267335">Fongué Yolande · +237 6 53 26 73 35</a></li>
+            <li>Fondatrice &amp; Dirigeante</li>
+            <li>Bafoussam, Cameroun</li>
+            <li><a href="https://www.instagram.com/arc_en_ciel_by_sw" target="_blank" rel="noopener">@arc_en_ciel_by_sw</a></li>
           </ul>
         </div>
 
         <div class="foot__col">
-          <h5>Contact</h5>
+          <h5>Europe — Paris</h5>
           <ul>
-            <li><a href="#">14 rue de l'Hibiscus<br />20 100 Casablanca</a></li>
-            <li><a href="#">+212 6 12 34 56 78</a></li>
-            <li><a href="#">hello@arc-en-ciel.com</a></li>
+            <li><a href="tel:+33695837258">Mr Chris · +33 6 95 83 72 58</a></li>
+            <li>Directeur Artistique</li>
+            <li>Paris, France</li>
+            <li><a href="https://www.instagram.com/arcenciel.group" target="_blank" rel="noopener">@arcenciel.group</a></li>
+            <li>[EMAIL OFFICIEL À AJOUTER]</li>
           </ul>
         </div>
       </div>
 
       <div class="foot__bottom">
-        <span>© 2026 Arc en Ciel — Tous droits réservés. Édition Hiver 2026.</span>
+        <span>© 2026 Arc en Ciel — Bafoussam × Paris. Tous droits réservés.</span>
+        <!-- Instagram : compte officiel Cameroun. Pinterest / LinkedIn : à confirmer par la Maison. -->
         <div class="foot__socials">
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/arc_en_ciel_by_sw" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
           </a>
-          <a href="#" aria-label="Pinterest">
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M11 7c2 0 4 1 4 3.5s-1.5 4-3.5 4c-1 0-1.5-.5-1.5-.5L9 19" stroke="currentColor" stroke-width="1.4"/></svg>
           </a>
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 10v7m0-10v.01M11 17v-4a3 3 0 0 1 6 0v4M11 10v7" stroke="currentColor" stroke-width="1.4"/></svg>
           </a>
-          <a href="#" aria-label="WhatsApp">
+          <a href="https://wa.me/237653267335" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 21l1.5-4.5A8.5 8.5 0 1 1 8 19.5L3 21z" stroke="currentColor" stroke-width="1.4"/></svg>
           </a>
         </div>
@@ -808,13 +708,19 @@
   </footer>
 
   <!-- ========== Floating WhatsApp ========== -->
-  <a href="#" class="fab" aria-label="WhatsApp">
+  <a href="https://wa.me/237653267335?text=Bonjour%20Arc%20en%20Ciel" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-1 1-1.3 2.3-.9 3.6.6 1.6 2.2 4.1 5.1 5.5 2.1 1 3 1.1 4 .9.7-.1 2-.9 2.3-1.7.3-.8.3-1.5.2-1.7 0-.1-.3-.2-.5-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.3-1.2c1.3.7 2.8 1.1 4.4 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
     <span class="fab__tip">Discuter sur WhatsApp</span>
   </a>
 
   <!-- ========== Scripts ========== -->
   <script>
+    // Nav — compact + hairline border once scrolled
+    const navEl = document.getElementById("nav");
+    const setNavState = () => navEl?.classList.toggle("is-scrolled", window.scrollY > 24);
+    setNavState();
+    window.addEventListener("scroll", setNavState, { passive: true });
+
     // Scroll reveal
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -840,50 +746,19 @@
     drawerClose?.addEventListener("click", () => toggleDrawer(false));
     drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => toggleDrawer(false)));
 
-    // Testimonial carousel
-    const track = document.getElementById("testiTrack");
-    const prevBtn = document.getElementById("testiPrev");
-    const nextBtn = document.getElementById("testiNext");
-    const curEl = document.getElementById("testiCur");
-    const totEl = document.getElementById("testiTot");
-    const cards = track?.children ?? [];
-    const total = cards.length;
-    let idx = 0;
-    if (totEl) totEl.textContent = String(total).padStart(2, "0");
-
-    function visibleCount() {
-      const w = window.innerWidth;
-      if (w < 640) return 1;
-      if (w < 980) return 2;
-      return 3;
-    }
-    function update() {
-      const visible = visibleCount();
-      const maxIdx = Math.max(0, total - visible);
-      idx = Math.min(idx, maxIdx);
-      const cardW = cards[0]?.getBoundingClientRect().width ?? 0;
-      const gap = 24;
-      track.style.transform = `translateX(-${idx * (cardW + gap)}px)`;
-      curEl.textContent = String(idx + 1).padStart(2, "0");
-    }
-    prevBtn?.addEventListener("click", () => { idx = Math.max(0, idx - 1); update(); });
-    nextBtn?.addEventListener("click", () => {
-      const visible = visibleCount();
-      const maxIdx = Math.max(0, total - visible);
-      idx = idx >= maxIdx ? 0 : idx + 1;
-      update();
+    // Portfolio — filtres par catégorie
+    const pfFilters = document.getElementById("pfFilters");
+    const pfItems = document.querySelectorAll(".pf-grid .pf-item");
+    pfFilters?.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        pfFilters.querySelector(".is-active")?.classList.remove("is-active");
+        btn.classList.add("is-active");
+        const cat = btn.dataset.cat;
+        pfItems.forEach((it) => {
+          it.hidden = !(cat === "all" || it.dataset.cat === cat);
+        });
+      });
     });
-    window.addEventListener("resize", update);
-    setTimeout(update, 100);
-
-    // Auto-advance carousel
-    let autoplay = setInterval(() => {
-      const visible = visibleCount();
-      const maxIdx = Math.max(0, total - visible);
-      idx = idx >= maxIdx ? 0 : idx + 1;
-      update();
-    }, 6000);
-    track?.addEventListener("mouseenter", () => clearInterval(autoplay));
   </script>
 
 </body>
