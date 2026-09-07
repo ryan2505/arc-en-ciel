@@ -119,7 +119,7 @@
             </div>
             <div class="cform-aside__block">
               <h4>Courriel</h4>
-              <p>[EMAIL OFFICIEL À AJOUTER]</p>
+              <p><a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a></p>
             </div>
             <div class="cform-aside__block">
               <h4>Instagram</h4>
@@ -132,10 +132,10 @@
           </div>
 
           <div>
-            <!-- Sans back-end : à l'envoi, le récapitulatif est transmis via WhatsApp (+237).
-                 Dès qu'une adresse e-mail officielle est disponible, brancher un endpoint
-                 (Formspree / Getform / API) ou un mailto: à la place. -->
-            <form class="cform" id="cform" action="https://wa.me/237653267335" method="get">
+            <!-- Sans back-end : à l'envoi, ouverture du client mail avec le récapitulatif
+                 pré-rempli vers arcenciel.event.groupe@gmail.com.
+                 Pour un envoi direct sans client mail, brancher un endpoint (Formspree / Getform / API). -->
+            <form class="cform" id="cform" action="mailto:arcenciel.event.groupe@gmail.com" method="post" enctype="text/plain">
               <div class="field">
                 <label for="f-nom">Nom &amp; prénom</label>
                 <input type="text" id="f-nom" name="nom" autocomplete="name" required />
@@ -187,7 +187,7 @@
               </div>
             </form>
             <div class="cform__ok" id="cformOk">
-              Merci — votre demande s'ouvre dans WhatsApp, prête à être envoyée. À défaut, appelez-nous au <a href="tel:+237653267335">+237 6 53 26 73 35</a> (Cameroun) ou au <a href="tel:+33695837258">+33 6 95 83 72 58</a> (Europe). Nous revenons vers vous sous 48 heures.
+              Merci — votre demande s'ouvre dans votre messagerie, prête à être envoyée à <a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a>. À défaut, appelez-nous au <a href="tel:+237653267335">+237 6 53 26 73 35</a> (Cameroun) ou au <a href="tel:+33695837258">+33 6 95 83 72 58</a> (Europe). Nous revenons vers vous sous 48 heures.
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@
             <li>Directeur Artistique</li>
             <li>Paris, France</li>
             <li><a href="https://www.instagram.com/arcenciel.group" target="_blank" rel="noopener">@arcenciel.group</a></li>
-            <li>[EMAIL OFFICIEL À AJOUTER]</li>
+            <li><a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a></li>
           </ul>
         </div>
       </div>
@@ -342,9 +342,11 @@
         "",
         v("f-message")
       ];
-      const msg = "Demande de devis — " + v("f-type") + " — " + v("f-nom") + "\n\n" + lines.join("\n");
-      // Envoi via WhatsApp (+237) tant qu'aucune adresse e-mail officielle n'est fournie.
-      window.open("https://wa.me/237653267335?text=" + encodeURIComponent(msg), "_blank", "noopener");
+      const subject = "Demande de devis — " + v("f-type") + " — " + v("f-nom");
+      // Ouverture du client mail avec le récapitulatif pré-rempli.
+      window.location.href =
+        "mailto:arcenciel.event.groupe@gmail.com?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(lines.join("\n"));
       wrap.classList.add("is-sent");
       form.hidden = true;
     });
