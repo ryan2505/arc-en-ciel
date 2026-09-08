@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arc en Ciel — Demander un devis</title>
-  <meta name="description" content="Initier le dialogue avec Arc en Ciel. Un premier échange confidentiel, sans engagement, pour étudier votre projet événementiel au Cameroun ou en Europe." />
+  <title>Arc en Ciel — Recevez votre proposition personnalisée</title>
+  <meta name="description" content="Décrivez votre événement à Arc en Ciel : coordonnées, lieu, espaces à décorer, univers esthétique, inspirations et budget. Nous préparons une proposition sur mesure." />
   <meta name="theme-color" content="#FCFBF8" />
   <link rel="canonical" href="https://arc-en-ciel-nu.vercel.app/contact" />
   <meta name="robots" content="noindex" />
@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="image-slot.js"></script>
 </head>
 <body>
 
@@ -68,12 +67,12 @@
   </aside>
 
   <!-- ========== En-tête ========== -->
-  <header class="section page-hero" data-screen-label="Contact">
+  <header class="section page-hero" data-screen-label="Proposition">
     <aside class="sidebar-rail" aria-hidden="true">
       <span class="tag">ARC EN CIEL</span>
       <div class="vlabels">
-        <span class="vlabel is-current">Contact</span>
-        <span class="vlabel">Devis</span>
+        <span class="vlabel is-current">Proposition</span>
+        <span class="vlabel">Le brief</span>
         <span class="vlabel">2026</span>
       </div>
       <span class="num">01</span>
@@ -83,22 +82,26 @@
     <div class="wrap">
       <div class="section__inner page-hero__inner">
         <a href="index.html" class="page-hero__back">← Accueil</a>
-        <span class="eyebrow">Initier le dialogue</span>
-        <h1 class="page-hero__title">Confier un <em>moment</em>, commencer une <em>signature</em>.</h1>
+        <span class="eyebrow">Demande de proposition</span>
+        <h1 class="page-hero__title">Recevez votre <em>proposition</em> personnalisée.</h1>
         <p class="page-hero__lead">
-          Nous étudions chaque demande en comité restreint. Décrivez votre projet en quelques lignes : nous revenons vers vous sous 48 heures pour un premier échange, confidentiel et sans engagement.
+          Six étapes courtes pour nous transmettre l'essentiel de votre événement : le lieu, les espaces à confier, l'univers recherché et votre budget. Plus vous nous en dites, plus notre proposition vous ressemblera. Réponse sous 48 heures.
         </p>
       </div>
     </div>
   </header>
 
-  <!-- ========== Formulaire ========== -->
-  <section class="section contact" id="form" data-screen-label="Formulaire">
+  <!-- ========== Formulaire de qualification ========== -->
+  <!-- Site statique, sans back-end : à l'envoi, ouverture du client mail avec un récapitulatif
+       structuré vers arcenciel.event.groupe@gmail.com (+ options WhatsApp / copier).
+       Autosave via localStorage. Pour un envoi serveur + upload d'images + CRM,
+       brancher un endpoint (Formspree / Getform / API) sur qfSubmit(). -->
+  <section class="section qf-section" id="form" data-screen-label="Formulaire">
     <aside class="sidebar-rail" aria-hidden="true">
       <span class="tag">ARC EN CIEL</span>
       <div class="vlabels">
-        <span class="vlabel">Contact</span>
-        <span class="vlabel is-current">Devis</span>
+        <span class="vlabel">Proposition</span>
+        <span class="vlabel is-current">Le brief</span>
         <span class="vlabel">Maison</span>
       </div>
       <span class="num">02</span>
@@ -107,90 +110,399 @@
 
     <div class="wrap">
       <div class="section__inner">
-        <div class="cform-wrap reveal" id="cformWrap">
-          <div class="cform-aside">
-            <div class="cform-aside__block">
-              <h4>Cameroun — Bafoussam</h4>
-              <p>Fongué Yolande · Fondatrice &amp; Dirigeante<br /><a href="tel:+237653267335">+237 6 53 26 73 35</a></p>
-            </div>
-            <div class="cform-aside__block">
-              <h4>Europe — Paris</h4>
-              <p>Mr Chris · Directeur Artistique<br /><a href="tel:+33695837258">+33 6 95 83 72 58</a><br /><a href="international.html">Voir l'antenne européenne →</a></p>
-            </div>
-            <div class="cform-aside__block">
-              <h4>Courriel</h4>
-              <p><a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a></p>
-            </div>
-            <div class="cform-aside__block">
-              <h4>Instagram</h4>
-              <p><a href="https://www.instagram.com/arc_en_ciel_by_sw" target="_blank" rel="noopener">@arc_en_ciel_by_sw</a><br /><a href="https://www.instagram.com/arcenciel.group" target="_blank" rel="noopener">@arcenciel.group</a></p>
-            </div>
-            <div class="cform-aside__block">
-              <h4>Délai de réponse</h4>
-              <p>Sous 48 heures.</p>
-            </div>
-          </div>
+        <form class="qf reveal" id="qf" novalidate autocomplete="on">
 
-          <div>
-            <!-- Sans back-end : à l'envoi, ouverture du client mail avec le récapitulatif
-                 pré-rempli vers arcenciel.event.groupe@gmail.com.
-                 Pour un envoi direct sans client mail, brancher un endpoint (Formspree / Getform / API). -->
-            <form class="cform" id="cform" action="mailto:arcenciel.event.groupe@gmail.com" method="post" enctype="text/plain">
-              <div class="field">
-                <label for="f-nom">Nom &amp; prénom</label>
-                <input type="text" id="f-nom" name="nom" autocomplete="name" required />
+          <!-- Progression -->
+          <ol class="qf__progress" id="qfProgress" aria-hidden="true">
+            <li data-step="1"><span class="qf__pnum">1</span><span class="qf__plabel">Coordonnées</span></li>
+            <li data-step="2"><span class="qf__pnum">2</span><span class="qf__plabel">Événement</span></li>
+            <li data-step="3"><span class="qf__pnum">3</span><span class="qf__plabel">Lieu</span></li>
+            <li data-step="4"><span class="qf__pnum">4</span><span class="qf__plabel">Étapes</span></li>
+            <li data-step="5"><span class="qf__pnum">5</span><span class="qf__plabel">Univers</span></li>
+            <li data-step="6"><span class="qf__pnum">6</span><span class="qf__plabel">Inspirations &amp; budget</span></li>
+          </ol>
+
+          <!-- ÉTAPE 1 — Vos coordonnées -->
+          <fieldset class="qf__step" data-step="1">
+            <legend class="qf__steptitle">Vos coordonnées</legend>
+            <p class="qf__stepintro">Pour vous recontacter et vous adresser la proposition.</p>
+
+            <div class="qf-grid">
+              <div class="qf-field" data-name="first_last_name">
+                <label class="qf-label" for="q-name">Nom &amp; prénom <span class="req">*</span></label>
+                <input class="qf-input" type="text" id="q-name" name="name" autocomplete="name" required />
+                <p class="qf-err">Merci d'indiquer votre nom et prénom.</p>
               </div>
-              <div class="field">
-                <label for="f-structure">Structure / marque</label>
-                <input type="text" id="f-structure" name="structure" autocomplete="organization" />
+              <div class="qf-field" data-name="company">
+                <label class="qf-label" for="q-company">Structure / entreprise / marque</label>
+                <input class="qf-input" type="text" id="q-company" name="company" autocomplete="organization" />
               </div>
-              <div class="field">
-                <label for="f-email">Courriel</label>
-                <input type="email" id="f-email" name="email" autocomplete="email" required />
+              <div class="qf-field" data-name="email">
+                <label class="qf-label" for="q-email">Adresse e-mail <span class="req">*</span></label>
+                <input class="qf-input" type="email" id="q-email" name="email" autocomplete="email" inputmode="email" required />
+                <p class="qf-err">Cette adresse e-mail ne semble pas valide.</p>
               </div>
-              <div class="field">
-                <label for="f-tel">Téléphone</label>
-                <input type="tel" id="f-tel" name="telephone" autocomplete="tel" />
+              <div class="qf-field" data-name="phone">
+                <label class="qf-label" for="q-phone">Téléphone <span class="req">*</span></label>
+                <input class="qf-input" type="tel" id="q-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+237 6 …  ·  +33 6 …" required />
+                <p class="qf-hint">Avec l'indicatif international (ex. +237, +33).</p>
+                <p class="qf-err">Merci d'indiquer un numéro joignable, avec l'indicatif.</p>
               </div>
-              <div class="field">
-                <label for="f-type">Nature du projet</label>
-                <select id="f-type" name="type">
-                  <option value="Décoration événementielle">Décoration événementielle</option>
-                  <option value="Mariage d'exception">Mariage d'exception</option>
-                  <option value="Baby shower &amp; intime">Baby shower &amp; intime</option>
-                  <option value="Événements corporate">Événements corporate</option>
-                  <option value="Décoration intérieure">Décoration intérieure</option>
-                  <option value="Location matériel">Location matériel</option>
-                  <option value="Projet international (Cameroun / Europe)">Projet international (Cameroun / Europe)</option>
-                  <option value="Accès au fonds privé">Accès au fonds privé</option>
+            </div>
+
+            <div class="qf-field" data-name="preferred_contact">
+              <span class="qf-label">Moyen de contact préféré</span>
+              <div class="qf-opts qf-opts--3">
+                <label class="qf-opt"><input type="radio" name="preferred_contact" value="Téléphone" /><span>Téléphone</span></label>
+                <label class="qf-opt"><input type="radio" name="preferred_contact" value="WhatsApp" /><span>WhatsApp</span></label>
+                <label class="qf-opt"><input type="radio" name="preferred_contact" value="E-mail" /><span>E-mail</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ÉTAPE 2 — Votre événement -->
+          <fieldset class="qf__step" data-step="2" hidden>
+            <legend class="qf__steptitle">Votre événement</legend>
+            <p class="qf__stepintro">Ce que nous allons mettre en scène.</p>
+
+            <div class="qf-field" data-name="event_type">
+              <span class="qf-label">Type d'événement <span class="req">*</span></span>
+              <div class="qf-opts">
+                <label class="qf-opt"><input type="radio" name="event_type" value="Mariage" required /><span>Mariage</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Mariage traditionnel" /><span>Mariage traditionnel</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Anniversaire" /><span>Anniversaire</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Baptême" /><span>Baptême</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Baby shower" /><span>Baby shower</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Graduation" /><span>Graduation</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Événement d'entreprise" /><span>Événement d'entreprise</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Dîner privé" /><span>Dîner privé</span></label>
+                <label class="qf-opt"><input type="radio" name="event_type" value="Autre" data-other="q-eventtype-other-wrap" /><span>Autre</span></label>
+              </div>
+              <p class="qf-err">Merci de choisir un type d'événement.</p>
+              <div class="qf-field qf-reveal" id="q-eventtype-other-wrap" hidden data-name="event_type_other">
+                <label class="qf-label" for="q-eventtype-other">Précisez votre type d'événement</label>
+                <input class="qf-input" type="text" id="q-eventtype-other" name="event_type_other" />
+              </div>
+            </div>
+
+            <div class="qf-grid">
+              <div class="qf-field" data-name="event_date">
+                <label class="qf-label" for="q-date">Date de l'événement <span class="req">*</span></label>
+                <input class="qf-input" type="date" id="q-date" name="event_date" required />
+                <p class="qf-err">Merci d'indiquer une date.</p>
+              </div>
+              <div class="qf-field" data-name="guest_count">
+                <label class="qf-label" for="q-guests">Nombre d'invités estimé <span class="req">*</span></label>
+                <input class="qf-input" type="number" id="q-guests" name="guest_count" min="1" max="5000" step="1" inputmode="numeric" required />
+                <p class="qf-err">Indiquez un nombre d'invités réaliste (entre 1 et 5 000).</p>
+              </div>
+            </div>
+
+            <div class="qf-field" data-name="date_flexible">
+              <span class="qf-label">La date est-elle flexible ?</span>
+              <div class="qf-opts qf-opts--2">
+                <label class="qf-opt"><input type="radio" name="date_flexible" value="Oui" /><span>Oui</span></label>
+                <label class="qf-opt"><input type="radio" name="date_flexible" value="Non" /><span>Non</span></label>
+              </div>
+            </div>
+
+            <div class="qf-field" data-name="location_type">
+              <span class="qf-label">L'événement se tient…</span>
+              <div class="qf-opts qf-opts--3">
+                <label class="qf-opt"><input type="radio" name="location_type" value="Intérieur" /><span>En intérieur</span></label>
+                <label class="qf-opt"><input type="radio" name="location_type" value="Extérieur" /><span>En extérieur</span></label>
+                <label class="qf-opt"><input type="radio" name="location_type" value="Les deux" /><span>Les deux</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ÉTAPE 3 — Lieu de célébration -->
+          <fieldset class="qf__step" data-step="3" hidden>
+            <legend class="qf__steptitle">Lieu de célébration</legend>
+            <p class="qf__stepintro">Le terrain de jeu — et ses contraintes.</p>
+
+            <div class="qf-grid">
+              <div class="qf-field" data-name="venue_name">
+                <label class="qf-label" for="q-venue">Lieu / salle de réception <span class="req">*</span></label>
+                <input class="qf-input" type="text" id="q-venue" name="venue_name" placeholder="Nom de la salle ou du lieu" required />
+                <p class="qf-err">Merci d'indiquer le lieu (même provisoire).</p>
+              </div>
+              <div class="qf-field" data-name="country">
+                <label class="qf-label" for="q-country">Pays <span class="req">*</span></label>
+                <select class="qf-select" id="q-country" name="country" required>
+                  <option value="" disabled selected>Choisir…</option>
+                  <option value="Cameroun">Cameroun</option>
+                  <option value="France">France</option>
+                  <option value="Belgique">Belgique</option>
+                  <option value="Suisse">Suisse</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                  <option value="Sénégal">Sénégal</option>
+                  <option value="Gabon">Gabon</option>
                   <option value="Autre">Autre</option>
                 </select>
+                <p class="qf-err">Merci de sélectionner un pays.</p>
               </div>
-              <div class="field">
-                <label for="f-date">Date envisagée</label>
-                <input type="text" id="f-date" name="date" placeholder="Mois / saison" />
+              <div class="qf-field" data-name="city">
+                <label class="qf-label" for="q-city">Ville <span class="req">*</span></label>
+                <input class="qf-input" type="text" id="q-city" name="city" autocomplete="address-level2" required />
+                <p class="qf-err">Merci d'indiquer la ville.</p>
               </div>
-              <div class="field field--full">
-                <label for="f-lieu">Lieu pressenti</label>
-                <input type="text" id="f-lieu" name="lieu" placeholder="Ville, pays, type de lieu" />
+              <div class="qf-field" data-name="department">
+                <label class="qf-label" for="q-dept">Département / région</label>
+                <input class="qf-input" type="text" id="q-dept" name="department" autocomplete="address-level1" />
               </div>
-              <div class="field field--full">
-                <label for="f-message">Votre projet</label>
-                <textarea id="f-message" name="message" placeholder="Contexte, intention, nombre d'invités, budget indicatif…" required></textarea>
+              <div class="qf-field qf-field--full" data-name="address">
+                <label class="qf-label" for="q-address">Adresse du lieu</label>
+                <input class="qf-input" type="text" id="q-address" name="address" autocomplete="street-address" />
               </div>
-              <div class="cform__foot">
-                <p class="cform__note">Vos informations sont utilisées uniquement pour répondre à votre demande.</p>
-                <button type="submit" class="btn btn--lg">
-                  <span>Envoyer la demande</span>
-                  <span class="arrow"><svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
-                </button>
-              </div>
-            </form>
-            <div class="cform__ok" id="cformOk">
-              Merci — votre demande s'ouvre dans votre messagerie, prête à être envoyée à <a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a>. À défaut, appelez-nous au <a href="tel:+237653267335">+237 6 53 26 73 35</a> (Cameroun) ou au <a href="tel:+33695837258">+33 6 95 83 72 58</a> (Europe). Nous revenons vers vous sous 48 heures.
             </div>
+
+            <div class="qf-field" data-name="venue_reserved">
+              <span class="qf-label">Le lieu est-il déjà réservé ?</span>
+              <div class="qf-opts qf-opts--3">
+                <label class="qf-opt"><input type="radio" name="venue_reserved" value="Oui" /><span>Oui</span></label>
+                <label class="qf-opt"><input type="radio" name="venue_reserved" value="Non" /><span>Non</span></label>
+                <label class="qf-opt"><input type="radio" name="venue_reserved" value="En cours" /><span>En cours</span></label>
+              </div>
+            </div>
+
+            <div class="qf-grid">
+              <div class="qf-field qf-field--full" data-name="setup_hours">
+                <label class="qf-label" for="q-setup">Horaires disponibles pour l'installation</label>
+                <input class="qf-input" type="text" id="q-setup" name="setup_hours" placeholder="Ex. accès la veille dès 15h · le jour J de 8h à 12h" />
+                <p class="qf-hint">Contraintes d'accès, de montage et de démontage.</p>
+              </div>
+              <div class="qf-field" data-name="event_start">
+                <label class="qf-label" for="q-start">Heure de début de l'événement</label>
+                <input class="qf-input" type="time" id="q-start" name="event_start" />
+              </div>
+              <div class="qf-field" data-name="event_end">
+                <label class="qf-label" for="q-end">Heure de fin prévue</label>
+                <input class="qf-input" type="time" id="q-end" name="event_end" />
+                <p class="qf-err">L'heure de fin ne peut pas précéder l'heure de début.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ÉTAPE 4 — Les différentes étapes de l'événement -->
+          <fieldset class="qf__step" data-step="4" hidden>
+            <legend class="qf__steptitle">Quels espaces souhaitez-vous nous confier ?</legend>
+            <p class="qf__stepintro">Sélectionnez tout ce que nous devons prendre en charge.</p>
+
+            <div class="qf-field" data-name="event_spaces">
+              <span class="qf-label">Espaces &amp; étapes</span>
+              <div class="qf-opts qf-opts--check">
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Cérémonie" /><span>Cérémonie</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Cocktail / vin d'honneur" /><span>Cocktail / vin d'honneur</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Salle de réception / dîner" /><span>Salle de réception / dîner</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Tables des invités" /><span>Tables des invités</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Table d'honneur" /><span>Table d'honneur</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Coin photo / photobooth" /><span>Coin photo / photobooth</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Entrée / panneau de bienvenue" /><span>Entrée / panneau de bienvenue</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Espace buffet" /><span>Espace buffet</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Bar" /><span>Bar</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Dancefloor / piste de danse" /><span>Dancefloor / piste de danse</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Espace gâteau" /><span>Espace gâteau</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Espace lounge" /><span>Espace lounge</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Décoration extérieure" /><span>Décoration extérieure</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="event_spaces" value="Autre" data-other="q-spaces-other-wrap" /><span>Autre</span></label>
+              </div>
+              <div class="qf-field qf-reveal" id="q-spaces-other-wrap" hidden data-name="event_spaces_other">
+                <label class="qf-label" for="q-spaces-other">Précisez les autres espaces ou prestations souhaités</label>
+                <input class="qf-input" type="text" id="q-spaces-other" name="event_spaces_other" />
+              </div>
+            </div>
+
+            <div class="qf-field" data-name="services">
+              <span class="qf-label">Quelle prestation souhaitez-vous ?</span>
+              <div class="qf-opts qf-opts--check">
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="services" value="Décoration complète" /><span>Décoration complète</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="services" value="Décoration partielle" /><span>Décoration partielle</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="services" value="Mise en place uniquement" /><span>Mise en place uniquement</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="services" value="Location de mobilier / matériel" /><span>Location de mobilier / matériel</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="services" value="Conception scénographique + installation" /><span>Conception scénographique + installation</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ÉTAPE 5 — Univers & décoration -->
+          <fieldset class="qf__step" data-step="5" hidden>
+            <legend class="qf__steptitle">Univers &amp; décoration</legend>
+            <p class="qf__stepintro">L'intention esthétique — dites-nous ce que vous imaginez.</p>
+
+            <div class="qf-field" data-name="universe">
+              <label class="qf-label" for="q-universe">Quel univers souhaitez-vous créer ?</label>
+              <textarea class="qf-textarea" id="q-universe" name="universe" placeholder="Ambiance, émotion recherchée, références, mots-clés…"></textarea>
+            </div>
+
+            <div class="qf-grid">
+              <div class="qf-field" data-name="theme">
+                <label class="qf-label" for="q-theme">Thème de l'événement</label>
+                <input class="qf-input" type="text" id="q-theme" name="theme" />
+              </div>
+              <div class="qf-field" data-name="colors_to_avoid">
+                <label class="qf-label" for="q-avoid">Couleurs à éviter</label>
+                <input class="qf-input" type="text" id="q-avoid" name="colors_to_avoid" />
+              </div>
+            </div>
+
+            <div class="qf-field" data-name="preferred_colors">
+              <span class="qf-label">Couleurs souhaitées <span class="qf-hint">(2 à 5)</span></span>
+              <div class="qf-colors" id="qfColors"></div>
+              <button type="button" class="qf-linkbtn" id="qfAddColor">+ Ajouter une couleur</button>
+            </div>
+
+            <div class="qf-field" data-name="styles">
+              <span class="qf-label">Style recherché</span>
+              <div class="qf-opts qf-opts--check">
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Élégant" /><span>Élégant</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Moderne" /><span>Moderne</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Minimaliste" /><span>Minimaliste</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Romantique" /><span>Romantique</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Chic" /><span>Chic</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Bohème" /><span>Bohème</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Traditionnel" /><span>Traditionnel</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Luxe" /><span>Luxe</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Floral" /><span>Floral</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Tropical" /><span>Tropical</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Afro-contemporain" /><span>Afro-contemporain</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="styles" value="Autre" data-other="q-styles-other-wrap" /><span>Autre</span></label>
+              </div>
+              <div class="qf-field qf-reveal" id="q-styles-other-wrap" hidden data-name="styles_other">
+                <label class="qf-label" for="q-styles-other">Précisez le style</label>
+                <input class="qf-input" type="text" id="q-styles-other" name="styles_other" />
+              </div>
+            </div>
+
+            <div class="qf-field" data-name="flowers">
+              <span class="qf-label">Souhaitez-vous des fleurs ?</span>
+              <div class="qf-opts qf-opts--4">
+                <label class="qf-opt"><input type="radio" name="flowers" value="Naturelles" /><span>Naturelles</span></label>
+                <label class="qf-opt"><input type="radio" name="flowers" value="Artificielles" /><span>Artificielles</span></label>
+                <label class="qf-opt"><input type="radio" name="flowers" value="Mix des deux" /><span>Mix des deux</span></label>
+                <label class="qf-opt"><input type="radio" name="flowers" value="À définir" /><span>À définir</span></label>
+              </div>
+            </div>
+
+            <div class="qf-field" data-name="important_elements">
+              <span class="qf-label">Éléments particulièrement importants pour vous</span>
+              <div class="qf-opts qf-opts--check">
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Drapage" /><span>Drapage</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Fleurs" /><span>Fleurs</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Bougies" /><span>Bougies</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Mobilier" /><span>Mobilier</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Vaisselle" /><span>Vaisselle</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Papeterie" /><span>Papeterie</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Éclairage" /><span>Éclairage</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Structures décoratives" /><span>Structures décoratives</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="important_elements" value="Autre" data-other="q-elements-other-wrap" /><span>Autre</span></label>
+              </div>
+              <div class="qf-field qf-reveal" id="q-elements-other-wrap" hidden data-name="important_elements_other">
+                <label class="qf-label" for="q-elements-other">Précisez</label>
+                <input class="qf-input" type="text" id="q-elements-other" name="important_elements_other" />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ÉTAPE 6 — Inspirations & budget -->
+          <fieldset class="qf__step" data-step="6" hidden>
+            <legend class="qf__steptitle">Partagez-nous votre univers ✨</legend>
+            <p class="qf__stepintro">Ajoutez quelques photos qui représentent l'ambiance, les couleurs ou la décoration que vous imaginez.</p>
+
+            <div class="qf-field" data-name="inspirations">
+              <span class="qf-label">Inspirations <span class="qf-hint">(5 images maximum)</span></span>
+              <label class="qf-upload__drop" for="q-files" id="qfDrop">
+                <span>+ Ajouter mes inspirations</span>
+                <small>JPG, PNG, WEBP — glissez-déposez ou cliquez</small>
+              </label>
+              <input type="file" id="q-files" accept="image/*" multiple hidden />
+              <div class="qf-upload__grid" id="qfThumbs"></div>
+              <p class="qf-hint" id="qfUploadNote">À l'envoi, votre messagerie s'ouvrira avec le récapitulatif — joignez-y ces photos, ou envoyez-les-nous par WhatsApp.</p>
+              <p class="qf-err" id="qfUploadErr">Formats image uniquement, 5 fichiers maximum, 12 Mo par image.</p>
+            </div>
+
+            <div class="qf-field" data-name="budget">
+              <span class="qf-label">Budget décoration envisagé</span>
+              <div class="qf-opts" id="qfBudgetEUR">
+                <label class="qf-opt"><input type="radio" name="budget" value="Moins de 1 000 €" /><span>Moins de 1 000 €</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="1 000 – 2 000 €" /><span>1 000 – 2 000 €</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="2 000 – 3 500 €" /><span>2 000 – 3 500 €</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="3 500 – 5 000 €" /><span>3 500 – 5 000 €</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="5 000 – 8 000 €" /><span>5 000 – 8 000 €</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="Plus de 8 000 €" /><span>Plus de 8 000 €</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="Je souhaite être conseillé(e)" /><span>Je souhaite être conseillé(e)</span></label>
+              </div>
+              <div class="qf-opts" id="qfBudgetXAF" hidden>
+                <label class="qf-opt"><input type="radio" name="budget" value="Moins de 300 000 FCFA" disabled /><span>Moins de 300 000 FCFA</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="300 000 – 600 000 FCFA" disabled /><span>300 000 – 600 000 FCFA</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="600 000 – 1 000 000 FCFA" disabled /><span>600 000 – 1 000 000 FCFA</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="1 000 000 – 2 000 000 FCFA" disabled /><span>1 000 000 – 2 000 000 FCFA</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="2 000 000 – 4 000 000 FCFA" disabled /><span>2 000 000 – 4 000 000 FCFA</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="Plus de 4 000 000 FCFA" disabled /><span>Plus de 4 000 000 FCFA</span></label>
+                <label class="qf-opt"><input type="radio" name="budget" value="Je souhaite être conseillé(e)" disabled /><span>Je souhaite être conseillé(e)</span></label>
+              </div>
+              <p class="qf-hint" id="qfBudgetNote">Devise adaptée au pays indiqué à l'étape 3.</p>
+            </div>
+
+            <div class="qf-field" data-name="description">
+              <label class="qf-label" for="q-desc">Parlez-nous de votre projet</label>
+              <textarea class="qf-textarea qf-textarea--lg" id="q-desc" name="description" placeholder="Décrivez-nous votre événement, vos envies et ce qui est particulièrement important pour vous. Plus nous en savons, plus nous pourrons imaginer une proposition qui vous ressemble."></textarea>
+            </div>
+
+            <div class="qf-field" data-name="existing_providers">
+              <span class="qf-label">Avez-vous déjà d'autres prestataires ?</span>
+              <div class="qf-opts qf-opts--check">
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Wedding planner" /><span>Wedding planner</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Fleuriste" /><span>Fleuriste</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Traiteur" /><span>Traiteur</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Location mobilier" /><span>Location mobilier</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="DJ" /><span>DJ</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Photographe" /><span>Photographe</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Aucun pour le moment" /><span>Aucun pour le moment</span></label>
+                <label class="qf-opt qf-opt--check"><input type="checkbox" name="existing_providers" value="Autre" data-other="q-providers-other-wrap" /><span>Autre</span></label>
+              </div>
+              <div class="qf-field qf-reveal" id="q-providers-other-wrap" hidden data-name="existing_providers_other">
+                <label class="qf-label" for="q-providers-other">Précisez</label>
+                <input class="qf-input" type="text" id="q-providers-other" name="existing_providers_other" />
+              </div>
+            </div>
+
+            <div class="qf__summary" id="qfSummary" aria-live="polite">
+              <h3>Récapitulatif</h3>
+              <dl id="qfSummaryList"></dl>
+            </div>
+          </fieldset>
+
+          <!-- Navigation -->
+          <div class="qf__nav">
+            <button type="button" class="qf__back" id="qfBack" hidden>← Étape précédente</button>
+            <p class="qf-hint qf__save" id="qfSave">Progression enregistrée sur cet appareil.</p>
+            <button type="button" class="btn btn--lg qf__next" id="qfNext">
+              <span>Étape suivante</span>
+              <span class="arrow"><svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
+            </button>
           </div>
-        </div>
+
+          <!-- Confirmation -->
+          <div class="qf__ok" id="qfOk" hidden>
+            <span class="eyebrow">Bien reçu</span>
+            <h2>Votre projet est bien entre nos mains.</h2>
+            <p>
+              L'équipe Arc en Ciel étudie les informations transmises pour préparer une proposition adaptée à votre événement. Nous revenons vers vous sous 48 heures.
+            </p>
+            <p class="qf__ok-actions">
+              <a class="btn btn--lg" id="qfWhatsApp" href="#" target="_blank" rel="noopener"><span>Envoyer aussi par WhatsApp</span></a>
+              <button type="button" class="link" id="qfCopy">Copier le récapitulatif</button>
+            </p>
+            <p class="qf-hint">
+              Si votre messagerie ne s'est pas ouverte, écrivez-nous à
+              <a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a>
+              ou appelez le <a href="tel:+237653267335">+237 6 53 26 73 35</a>.
+            </p>
+          </div>
+
+        </form>
       </div>
     </div>
   </section>
@@ -274,19 +586,17 @@
 
   <!-- ========== Scripts ========== -->
   <script>
-    // Nav scroll state
+    // ---- Chrome partagé ----
     const navEl = document.getElementById("nav");
     const setNavState = () => navEl?.classList.toggle("is-scrolled", window.scrollY > 24);
     setNavState();
     window.addEventListener("scroll", setNavState, { passive: true });
 
-    // Scroll reveal
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-    // Mobile drawer
     const burger = document.getElementById("burger");
     const drawer = document.getElementById("drawer");
     const drawerClose = document.getElementById("drawerClose");
@@ -300,56 +610,358 @@
     drawerClose?.addEventListener("click", () => toggleDrawer(false));
     drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => toggleDrawer(false)));
 
-    // ----- Contact form -----
-    const form = document.getElementById("cform");
-    const wrap = document.getElementById("cformWrap");
-    const params = new URLSearchParams(location.search);
+    // ============================================================
+    //  Assistant « Demande de proposition » (6 étapes)
+    // ============================================================
+    (function () {
+      const qf = document.getElementById("qf");
+      if (!qf) return;
 
-    // Pré-remplissage selon le contexte d'arrivée (?type=… &sujet=…)
-    const typeMap = {
-      devis: null,
-      rdv: "Autre",
-      international: "Projet international (Cameroun / Europe)",
-      fonds: "Accès au fonds privé",
-      "decoration-evenementielle": "Décoration événementielle",
-      mariage: "Mariage d'exception",
-      "baby-shower": "Baby shower & intime",
-      corporate: "Événements corporate",
-      "decoration-interieure": "Décoration intérieure",
-      "location-materiel": "Location matériel"
-    };
-    const sel = document.getElementById("f-type");
-    const wanted = typeMap[params.get("sujet") || params.get("type")];
-    if (wanted) {
-      [...sel.options].forEach((o) => { if (o.value === wanted || o.text === wanted) sel.value = o.value; });
-    }
-    if (params.get("type") === "rdv") {
-      document.getElementById("f-message").value = "Je souhaite convenir d'un premier rendez-vous.\n\n";
-    }
+      const STORE = "aec_qf_v1";
+      const EMAIL = "arcenciel.event.groupe@gmail.com";
+      const WA = "237653267335";
+      const params = new URLSearchParams(location.search);
+      const steps = [...qf.querySelectorAll(".qf__step")];
+      const progressItems = [...document.querySelectorAll("#qfProgress li")];
+      const btnNext = document.getElementById("qfNext");
+      const btnBack = document.getElementById("qfBack");
+      const okBox = document.getElementById("qfOk");
+      const nav = qf.querySelector(".qf__nav");
+      const TOTAL = steps.length;
+      let current = 1;
+      let submitting = false;
+      let brief = "";
 
-    form?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      const v = (id) => (document.getElementById(id).value || "").trim();
-      const lines = [
-        "Nature du projet : " + v("f-type"),
-        "Nom : " + v("f-nom"),
-        "Structure / marque : " + (v("f-structure") || "—"),
-        "Courriel : " + v("f-email"),
-        "Téléphone : " + (v("f-tel") || "—"),
-        "Date envisagée : " + (v("f-date") || "—"),
-        "Lieu pressenti : " + (v("f-lieu") || "—"),
-        "",
-        v("f-message")
-      ];
-      const subject = "Demande de devis — " + v("f-type") + " — " + v("f-nom");
-      // Ouverture du client mail avec le récapitulatif pré-rempli.
-      window.location.href =
-        "mailto:arcenciel.event.groupe@gmail.com?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(lines.join("\n"));
-      wrap.classList.add("is-sent");
-      form.hidden = true;
-    });
+      const track = (event, extra) => { try { (window.dataLayer = window.dataLayer || []).push(Object.assign({ event }, extra || {})); } catch (e) {} };
+
+      // ---------- Champs conditionnels « Autre » ----------
+      qf.querySelectorAll("[data-other]").forEach((inp) => {
+        const target = document.getElementById(inp.dataset.other);
+        const sync = () => {
+          const on = inp.type === "checkbox" ? inp.checked : inp.checked;
+          if (target) target.hidden = !on;
+        };
+        inp.addEventListener("change", () => {
+          // pour les radios d'un même groupe, resynchroniser tout le groupe
+          if (inp.type === "radio") {
+            qf.querySelectorAll('input[name="' + inp.name + '"]').forEach((r) => {
+              const t = r.dataset.other ? document.getElementById(r.dataset.other) : null;
+              if (t) t.hidden = !r.checked;
+            });
+          } else sync();
+          save();
+        });
+        sync();
+      });
+
+      // ---------- Couleurs (2 à 5) ----------
+      const colorsBox = document.getElementById("qfColors");
+      const addColorBtn = document.getElementById("qfAddColor");
+      function colorRow(hex, name) {
+        const row = document.createElement("div");
+        row.className = "qf-color-row";
+        row.innerHTML =
+          '<input type="color" value="' + (hex || "#c9b7a0") + '" aria-label="Couleur" />' +
+          '<input type="text" class="qf-input" placeholder="Nom de la couleur (ex. terracotta)" value="' + (name ? name.replace(/"/g, "&quot;") : "") + '" />' +
+          '<button type="button" class="qf-color-del" aria-label="Retirer">✕</button>';
+        row.querySelector(".qf-color-del").addEventListener("click", () => { row.remove(); syncColorBtn(); save(); });
+        row.querySelectorAll("input").forEach((i) => i.addEventListener("input", save));
+        colorsBox.appendChild(row);
+        syncColorBtn();
+      }
+      function syncColorBtn() {
+        const n = colorsBox.children.length;
+        addColorBtn.hidden = n >= 5;
+      }
+      addColorBtn.addEventListener("click", () => { if (colorsBox.children.length < 5) { colorRow(); save(); } });
+
+      // ---------- Upload d'inspirations (max 5) ----------
+      const fileInput = document.getElementById("q-files");
+      const drop = document.getElementById("qfDrop");
+      const thumbs = document.getElementById("qfThumbs");
+      const uploadErr = document.getElementById("qfUploadErr");
+      const MAX_FILES = 5, MAX_BYTES = 12 * 1024 * 1024;
+      let files = []; // { file, url }
+
+      function renderThumbs() {
+        thumbs.innerHTML = "";
+        files.forEach((f, i) => {
+          const el = document.createElement("figure");
+          el.className = "qf-thumb";
+          el.innerHTML = '<img alt="Inspiration ' + (i + 1) + '" src="' + f.url + '" /><button type="button" aria-label="Retirer">✕</button>';
+          el.querySelector("button").addEventListener("click", () => {
+            URL.revokeObjectURL(f.url);
+            files.splice(i, 1);
+            renderThumbs();
+          });
+          thumbs.appendChild(el);
+        });
+        drop.querySelector("span").textContent = files.length
+          ? "+ Ajouter (" + files.length + "/" + MAX_FILES + ")"
+          : "+ Ajouter mes inspirations";
+      }
+      function addFiles(list) {
+        uploadErr.style.display = "none";
+        let rejected = false;
+        [...list].forEach((file) => {
+          if (files.length >= MAX_FILES) { rejected = true; return; }
+          if (!/^image\//.test(file.type)) { rejected = true; return; }
+          if (file.size > MAX_BYTES) { rejected = true; return; }
+          files.push({ file, url: URL.createObjectURL(file) });
+        });
+        if (rejected) uploadErr.style.display = "block";
+        renderThumbs();
+      }
+      fileInput.addEventListener("change", (e) => { addFiles(e.target.files); fileInput.value = ""; });
+      ["dragover", "dragenter"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("is-drag"); }));
+      ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("is-drag"); }));
+      drop.addEventListener("drop", (e) => { if (e.dataTransfer?.files) addFiles(e.dataTransfer.files); });
+
+      // ---------- Devise selon le pays ----------
+      const country = document.getElementById("q-country");
+      const budgetEUR = document.getElementById("qfBudgetEUR");
+      const budgetXAF = document.getElementById("qfBudgetXAF");
+      const budgetNote = document.getElementById("qfBudgetNote");
+      function syncCurrency() {
+        const xaf = country.value === "Cameroun";
+        budgetXAF.hidden = !xaf;
+        budgetEUR.hidden = xaf;
+        budgetXAF.querySelectorAll("input").forEach((i) => { i.disabled = !xaf; if (!xaf) i.checked = false; });
+        budgetEUR.querySelectorAll("input").forEach((i) => { i.disabled = xaf; if (xaf) i.checked = false; });
+        budgetNote.textContent = xaf
+          ? "Tranches en FCFA (XAF), adaptées au marché camerounais."
+          : "Tranches en euros (€). La devise suit le pays indiqué à l'étape 3.";
+      }
+      country.addEventListener("change", () => { syncCurrency(); save(); });
+
+      // ---------- Validation ----------
+      function fieldOf(input) { return input.closest(".qf-field"); }
+      function setError(field, on) { field && field.classList.toggle("is-invalid", !!on); }
+      function emailOK(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+      function validateStep(n) {
+        const step = steps[n - 1];
+        let firstBad = null;
+        // champs texte / date / number / select requis
+        step.querySelectorAll("input[required], select[required]").forEach((inp) => {
+          const f = fieldOf(inp);
+          let bad = false;
+          const val = (inp.value || "").trim();
+          if (!val) bad = true;
+          else if (inp.type === "email" && !emailOK(val)) bad = true;
+          else if (inp.type === "tel" && val.replace(/[^\d]/g, "").length < 6) bad = true;
+          else if (inp.type === "number") {
+            const num = Number(val);
+            if (!Number.isFinite(num) || num < 1 || num > 5000) bad = true;
+          }
+          setError(f, bad);
+          if (bad && !firstBad) firstBad = inp;
+        });
+        // groupes radio requis
+        const need = new Set();
+        step.querySelectorAll('input[type="radio"][required]').forEach((r) => need.add(r.name));
+        need.forEach((name) => {
+          const group = step.querySelectorAll('input[name="' + name + '"]');
+          const checked = [...group].some((r) => r.checked);
+          const f = fieldOf(group[0]);
+          setError(f, !checked);
+          if (!checked && !firstBad) firstBad = group[0];
+        });
+        // cohérence horaires (étape 3)
+        if (n === 3) {
+          const s = document.getElementById("q-start").value;
+          const e = document.getElementById("q-end").value;
+          const f = fieldOf(document.getElementById("q-end"));
+          const bad = s && e && e < s;
+          setError(f, bad);
+          if (bad && !firstBad) firstBad = document.getElementById("q-end");
+        }
+        if (firstBad) {
+          firstBad.focus({ preventScroll: true });
+          firstBad.closest(".qf-field").scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return !firstBad;
+      }
+
+      // ---------- Navigation entre étapes ----------
+      function showStep(n, opts) {
+        current = Math.max(1, Math.min(TOTAL, n));
+        steps.forEach((s, i) => (s.hidden = i !== current - 1));
+        progressItems.forEach((li, i) => {
+          li.classList.toggle("is-current", i === current - 1);
+          li.classList.toggle("is-done", i < current - 1);
+        });
+        btnBack.hidden = current === 1;
+        const last = current === TOTAL;
+        btnNext.querySelector("span:first-child").textContent = last ? "RECEVOIR MA PROPOSITION PERSONNALISÉE" : "Étape suivante";
+        btnNext.classList.toggle("qf__next--final", last);
+        if (last) buildSummary();
+        if (!opts || !opts.silent) {
+          qf.scrollIntoView({ behavior: "smooth", block: "start" });
+          track("qf_step_view", { step: current });
+        }
+      }
+      btnNext.addEventListener("click", () => {
+        if (submitting) return;
+        if (!validateStep(current)) return;
+        track("qf_step_complete", { step: current });
+        if (current === TOTAL) { qfSubmit(); return; }
+        showStep(current + 1);
+        save();
+      });
+      btnBack.addEventListener("click", () => { showStep(current - 1); save(); });
+
+      // ---------- Récapitulatif ----------
+      function collect() {
+        const g = (id) => (document.getElementById(id)?.value || "").trim();
+        const radio = (name) => (qf.querySelector('input[name="' + name + '"]:checked') || {}).value || "";
+        const checks = (name) => [...qf.querySelectorAll('input[name="' + name + '"]:checked')].map((c) => c.value);
+        const colors = [...colorsBox.children].map((r) => {
+          const hex = r.querySelector('input[type="color"]').value;
+          const nm = r.querySelector('input[type="text"]').value.trim();
+          return (nm ? nm + " " : "") + "(" + hex + ")";
+        });
+        return {
+          "Nom & prénom": g("q-name"),
+          "Structure": g("q-company"),
+          "E-mail": g("q-email"),
+          "Téléphone": g("q-phone"),
+          "Contact préféré": radio("preferred_contact"),
+          "Type d'événement": radio("event_type") + (radio("event_type") === "Autre" ? " — " + g("q-eventtype-other") : ""),
+          "Date": g("q-date") + (radio("date_flexible") ? " (flexible : " + radio("date_flexible") + ")" : ""),
+          "Invités": g("q-guests"),
+          "Intérieur / extérieur": radio("location_type"),
+          "Lieu": g("q-venue"),
+          "Ville": g("q-city"),
+          "Département / région": g("q-dept"),
+          "Pays": g("q-country"),
+          "Adresse": g("q-address"),
+          "Lieu réservé": radio("venue_reserved"),
+          "Horaires installation": g("q-setup"),
+          "Début / fin": [g("q-start"), g("q-end")].filter(Boolean).join(" → "),
+          "Espaces à confier": checks("event_spaces").join(", ") + (checks("event_spaces").includes("Autre") ? " — " + g("q-spaces-other") : ""),
+          "Prestation": checks("services").join(", "),
+          "Univers": g("q-universe"),
+          "Thème": g("q-theme"),
+          "Couleurs souhaitées": colors.join(", "),
+          "Couleurs à éviter": g("q-avoid"),
+          "Style": checks("styles").join(", ") + (checks("styles").includes("Autre") ? " — " + g("q-styles-other") : ""),
+          "Fleurs": radio("flowers"),
+          "Éléments importants": checks("important_elements").join(", ") + (checks("important_elements").includes("Autre") ? " — " + g("q-elements-other") : ""),
+          "Inspirations": files.length ? files.length + " image(s) — à joindre à l'e-mail / WhatsApp" : "—",
+          "Budget": radio("budget"),
+          "Description": g("q-desc"),
+          "Autres prestataires": checks("existing_providers").join(", ") + (checks("existing_providers").includes("Autre") ? " — " + g("q-providers-other") : "")
+        };
+      }
+      function buildSummary() {
+        const data = collect();
+        const dl = document.getElementById("qfSummaryList");
+        dl.innerHTML = "";
+        Object.entries(data).forEach(([k, v]) => {
+          if (!v || v === "—") return;
+          const dt = document.createElement("dt"); dt.textContent = k;
+          const dd = document.createElement("dd"); dd.textContent = v;
+          dl.append(dt, dd);
+        });
+      }
+
+      // ---------- Persistance ----------
+      function serialize() {
+        const data = {};
+        qf.querySelectorAll("input, select, textarea").forEach((el) => {
+          if (el.type === "file" || el.type === "color") return;
+          if (el.type === "checkbox" || el.type === "radio") { if (el.checked) (data[el.name] = data[el.name] || []).push(el.value); }
+          else if (el.id) data["#" + el.id] = el.value;
+        });
+        data.__colors = [...colorsBox.children].map((r) => ({
+          hex: r.querySelector('input[type="color"]').value,
+          name: r.querySelector('input[type="text"]').value
+        }));
+        data.__step = current;
+        return data;
+      }
+      function save() { try { localStorage.setItem(STORE, JSON.stringify(serialize())); } catch (e) {} }
+      function restore() {
+        let data;
+        try { data = JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) {}
+        if (!data) return false;
+        (data.__colors || []).forEach((c) => colorRow(c.hex, c.name));
+        qf.querySelectorAll("input, select, textarea").forEach((el) => {
+          if (el.type === "file" || el.type === "color") return;
+          if (el.type === "checkbox" || el.type === "radio") {
+            el.checked = Array.isArray(data[el.name]) && data[el.name].includes(el.value);
+          } else if (el.id && data["#" + el.id] != null) el.value = data["#" + el.id];
+        });
+        qf.querySelectorAll("[data-other]").forEach((inp) => inp.dispatchEvent(new Event("change")));
+        return true;
+      }
+
+      // ---------- Soumission ----------
+      function qfSubmit() {
+        if (submitting) return;
+        submitting = true;
+        btnNext.disabled = true;
+        btnNext.querySelector("span:first-child").textContent = "Préparation…";
+        track("qf_submit", {});
+
+        const data = collect();
+        const lines = ["NOUVEAU PROJET REÇU — ARC EN CIEL", ""];
+        Object.entries(data).forEach(([k, v]) => { if (v && v !== "—") lines.push(k + " : " + v); });
+        lines.push("", "— Envoyé depuis le formulaire du site.");
+        brief = lines.join("\n");
+
+        const subject = "Nouveau projet — " + (data["Type d'événement"] || "Événement") + " — " + (data["Nom & prénom"] || "");
+        // Endpoint futur : remplacer ce bloc par un fetch(POST) vers Formspree / API + upload des `files`.
+        window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(brief);
+
+        document.getElementById("qfWhatsApp").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(brief);
+        steps.forEach((s) => (s.hidden = true));
+        document.getElementById("qfProgress").hidden = true;
+        nav.hidden = true;
+        okBox.hidden = false;
+        qf.classList.add("is-sent");
+        okBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        try { localStorage.removeItem(STORE); } catch (e) {}
+        track("qf_submitted", {});
+      }
+
+      document.getElementById("qfCopy").addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(brief); document.getElementById("qfCopy").textContent = "Récapitulatif copié ✓"; }
+        catch (e) { document.getElementById("qfCopy").textContent = "Copie impossible — sélectionnez le texte de l'e-mail"; }
+      });
+
+      // ---------- Init ----------
+      qf.addEventListener("submit", (e) => e.preventDefault());
+
+      // Étape à restaurer : lue AVANT restore() (restore() déclenche des save() qui écrasent __step)
+      let bootStep = 1;
+      try { bootStep = JSON.parse(localStorage.getItem(STORE) || "{}").__step || 1; } catch (e) {}
+
+      const hadColors = restore();
+      if (!hadColors && colorsBox.children.length === 0) { colorRow("#c9b7a0", ""); colorRow("#7a5e40", ""); }
+      syncCurrency();
+
+      // Autosave activé seulement après la restauration
+      qf.addEventListener("input", save);
+      qf.addEventListener("change", save);
+
+      // Pré-remplissage depuis les liens du site (?type= / ?sujet=)
+      const typeMap = {
+        mariage: "Mariage", "decoration-evenementielle": "Événement d'entreprise",
+        "baby-shower": "Baby shower", corporate: "Événement d'entreprise",
+        "decoration-interieure": "Dîner privé", "location-materiel": null,
+        international: null, fonds: null, rdv: null, devis: null
+      };
+      const wanted = typeMap[params.get("sujet") || params.get("type")];
+      if (wanted) {
+        const r = qf.querySelector('input[name="event_type"][value="' + wanted + '"]');
+        if (r) { r.checked = true; r.dispatchEvent(new Event("change")); }
+      }
+
+      showStep(bootStep, { silent: true });
+      track("qf_open", {});
+    })();
   </script>
 
 </body>
