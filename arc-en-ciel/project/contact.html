@@ -112,6 +112,12 @@
       <div class="section__inner">
         <form class="qf reveal" id="qf" novalidate autocomplete="on">
 
+          <!-- Anti-spam : champ leurre, invisible aux humains -->
+          <div class="qf-hp" aria-hidden="true">
+            <label for="q-hp">Ne rien saisir</label>
+            <input type="text" id="q-hp" name="company_website" tabindex="-1" autocomplete="off" />
+          </div>
+
           <!-- Progression -->
           <ol class="qf__progress" id="qfProgress" aria-hidden="true">
             <li data-step="1"><span class="qf__pnum">1</span><span class="qf__plabel">Coordonnées</span></li>
@@ -488,14 +494,14 @@
           <div class="qf__ok" id="qfOk" hidden>
             <span class="eyebrow">Bien reçu</span>
             <h2>Votre projet est bien entre nos mains.</h2>
-            <p>
+            <p id="qfOkLead">
               L'équipe Arc en Ciel étudie les informations transmises pour préparer une proposition adaptée à votre événement. Nous revenons vers vous sous 48 heures.
             </p>
             <p class="qf__ok-actions">
               <a class="btn btn--lg" id="qfWhatsApp" href="#" target="_blank" rel="noopener"><span>Envoyer aussi par WhatsApp</span></a>
               <button type="button" class="link" id="qfCopy">Copier le récapitulatif</button>
             </p>
-            <p class="qf-hint">
+            <p class="qf-hint" id="qfOkExtra" hidden>
               Si votre messagerie ne s'est pas ouverte, écrivez-nous à
               <a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a>
               ou appelez le <a href="tel:+237653267335">+237 6 53 26 73 35</a>.
@@ -628,6 +634,7 @@
       const okBox = document.getElementById("qfOk");
       const nav = qf.querySelector(".qf__nav");
       const TOTAL = steps.length;
+      const openedAt = Date.now();
       let current = 1;
       let submitting = false;
       let brief = "";
@@ -897,12 +904,46 @@
         return true;
       }
 
+      // ---------- Compression + encodage des inspirations ----------
+      function compressImage(file, maxPx, quality) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          const url = URL.createObjectURL(file);
+          img.onload = () => {
+            URL.revokeObjectURL(url);
+            let { width: w, height: h } = img;
+            const s = Math.min(1, maxPx / Math.max(w, h));
+            w = Math.round(w * s); h = Math.round(h * s);
+            const cv = document.createElement("canvas");
+            cv.width = w; cv.height = h;
+            cv.getContext("2d").drawImage(img, 0, 0, w, h);
+            const b64 = cv.toDataURL("image/jpeg", quality).split(",")[1] || "";
+            resolve({ filename: (file.name || "inspiration").replace(/\.[^.]+$/, "") + ".jpg", content: b64 });
+          };
+          img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
+          img.src = url;
+        });
+      }
+      async function packImages(limitBytes) {
+        const out = [];
+        let total = 0;
+        for (const f of files) {
+          const enc = await compressImage(f.file, 1400, 0.72);
+          if (!enc || !enc.content) continue;
+          const size = Math.ceil((enc.content.length * 3) / 4);
+          if (total + size > limitBytes) break;
+          total += size;
+          out.push(enc);
+        }
+        return out;
+      }
+
       // ---------- Soumission ----------
-      function qfSubmit() {
+      async function qfSubmit() {
         if (submitting) return;
         submitting = true;
         btnNext.disabled = true;
-        btnNext.querySelector("span:first-child").textContent = "Préparation…";
+        btnNext.querySelector("span:first-child").textContent = "Envoi en cours…";
         track("qf_submit", {});
 
         const data = collect();
@@ -910,12 +951,41 @@
         Object.entries(data).forEach(([k, v]) => { if (v && v !== "—") lines.push(k + " : " + v); });
         lines.push("", "— Envoyé depuis le formulaire du site.");
         brief = lines.join("\n");
-
         const subject = "Nouveau projet — " + (data["Type d'événement"] || "Événement") + " — " + (data["Nom & prénom"] || "");
-        // Endpoint futur : remplacer ce bloc par un fetch(POST) vers Formspree / API + upload des `files`.
-        window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(brief);
+
+        // 1) Tentative d'envoi automatique (e-mail pro + WhatsApp) via /api/lead
+        let delivered = false;
+        try {
+          const images = files.length ? await packImages(3.0 * 1024 * 1024) : [];
+          const r = await fetch("/api/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              data,
+              images,
+              brief,
+              company_website: document.getElementById("q-hp").value,
+              elapsed: Date.now() - openedAt
+            })
+          });
+          const j = await r.json().catch(() => ({}));
+          delivered = r.ok && j.ok === true;
+        } catch (e) { delivered = false; }
+
+        // 2) Repli si l'automatisation n'est pas (encore) configurée ou indisponible
+        if (!delivered) {
+          window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(brief);
+        }
 
         document.getElementById("qfWhatsApp").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(brief);
+        const okLead = document.getElementById("qfOkLead");
+        if (okLead) {
+          okLead.textContent = delivered
+            ? "Votre demande vient d'être transmise à l'équipe Arc en Ciel — par e-mail et par WhatsApp. Nous revenons vers vous sous 48 heures."
+            : "L'équipe Arc en Ciel étudie les informations transmises pour préparer une proposition adaptée à votre événement. Votre messagerie s'est ouverte avec le récapitulatif — il ne reste qu'à l'envoyer. Nous revenons vers vous sous 48 heures.";
+        }
+        document.getElementById("qfOkExtra").hidden = delivered;
+
         steps.forEach((s) => (s.hidden = true));
         document.getElementById("qfProgress").hidden = true;
         nav.hidden = true;
@@ -923,7 +993,7 @@
         qf.classList.add("is-sent");
         okBox.scrollIntoView({ behavior: "smooth", block: "center" });
         try { localStorage.removeItem(STORE); } catch (e) {}
-        track("qf_submitted", {});
+        track("qf_submitted", { delivered });
       }
 
       document.getElementById("qfCopy").addEventListener("click", async () => {

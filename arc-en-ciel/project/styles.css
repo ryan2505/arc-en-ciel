@@ -2185,6 +2185,16 @@ image-slot {
 .qf__step { border: 0; padding: 0; margin: 0; min-width: 0; }
 .qf__step[hidden] { display: none; }
 
+/* Champ leurre anti-spam — hors écran, non focусable */
+.qf-hp {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* ----- Progression ----- */
 .qf__progress {
   display: flex;
