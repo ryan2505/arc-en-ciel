@@ -115,20 +115,19 @@
       <div class="section__inner">
         <div class="pf-filters reveal" id="pfFilters">
           <button class="is-active" data-cat="all">Tous <span class="count">7</span></button>
-          <button data-cat="corporate">Réception <span class="count">1</span></button>
-          <button data-cat="mariage">Mariage <span class="count">1</span></button>
-          <button data-cat="baby-shower">Baby shower <span class="count">3</span></button>
-          <button data-cat="interieur">Détail <span class="count">2</span></button>
+          <button data-cat="mariage">Mariage <span class="count">3</span></button>
+          <button data-cat="interieur">Décor <span class="count">3</span></button>
+          <button data-cat="baby-shower">Baby shower <span class="count">1</span></button>
         </div>
 
         <div class="pf-grid">
-          <article class="pf-item pf-item--xl reveal" data-d="1" data-cat="corporate">
-            <image-slot id="rpf-1" src="assets/photos/table-tropicale.jpg" placeholder="Réception — scénographie de table, art floral"></image-slot>
+          <article class="pf-item pf-item--xl reveal" data-d="1" data-cat="mariage">
+            <image-slot id="rpf-1" src="assets/photos/reception-mariage-salle.jpg" placeholder="Réception de mariage — chapiteau, backdrop floral, piste"></image-slot>
             <span class="pf-item__tag">Réception</span>
             <span class="pf-item__num">— 01</span>
             <div class="pf-item__meta">
-              <b>Réception <em>d'exception</em></b>
-              <small>Scénographie de table &amp; art floral</small>
+              <b>Réception <em>de mariage</em></b>
+              <small>Chapiteau, backdrop floral &amp; piste sur mesure</small>
             </div>
           </article>
 
@@ -143,32 +142,32 @@
           </article>
 
           <article class="pf-item pf-item--sm reveal" data-d="3" data-cat="mariage">
-            <image-slot id="rpf-3" src="assets/photos/mariage-table-honneur.jpg" placeholder="Mariage — table d'honneur, centre floral"></image-slot>
-            <span class="pf-item__tag">Mariage</span>
+            <image-slot id="rpf-3" src="assets/photos/scenographie-drape.jpg" placeholder="Scénographie — backdrop drapé, florals, mise en lumière"></image-slot>
+            <span class="pf-item__tag">Scénographie</span>
             <span class="pf-item__num">— 03</span>
             <div class="pf-item__meta">
-              <b>Mariage <em>d'exception</em></b>
-              <small>Table d'honneur &amp; centre floral</small>
+              <b>Backdrop <em>drapé</em></b>
+              <small>Drapés, art floral &amp; mise en lumière</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--wide reveal" data-d="1" data-cat="baby-shower">
-            <image-slot id="rpf-4" src="assets/photos/baby-shower-salle.jpg" placeholder="Baby shower — mise en scène complète de la salle"></image-slot>
-            <span class="pf-item__tag">Baby shower</span>
+          <article class="pf-item pf-item--wide reveal" data-d="1" data-cat="mariage">
+            <image-slot id="rpf-4" src="assets/photos/ceremonie-traditionnelle.jpg" placeholder="Cérémonie traditionnelle — décor extérieur, assise cérémonie"></image-slot>
+            <span class="pf-item__tag">Cérémonie</span>
             <span class="pf-item__num">— 04</span>
             <div class="pf-item__meta">
-              <b>Baby shower <em>& intime</em></b>
-              <small>Mise en scène complète</small>
+              <b>Cérémonie <em>traditionnelle</em></b>
+              <small>Décor extérieur &amp; assise de cérémonie</small>
             </div>
           </article>
 
-          <article class="pf-item pf-item--tall reveal" data-d="2" data-cat="baby-shower">
-            <image-slot id="rpf-5" src="assets/photos/signaletique-accueil.jpg" placeholder="Signalétique — panneau d'accueil sur mesure"></image-slot>
-            <span class="pf-item__tag">Signalétique</span>
+          <article class="pf-item pf-item--tall reveal" data-d="2" data-cat="interieur">
+            <image-slot id="rpf-5" src="assets/photos/mobilier-art-table.jpg" placeholder="Mobilier — assises bambou, chargeurs, verrerie"></image-slot>
+            <span class="pf-item__tag">Mobilier</span>
             <span class="pf-item__num">— 05</span>
             <div class="pf-item__meta">
-              <b>Papeterie <em>& accueil</em></b>
-              <small>Panneau d'accueil sur mesure</small>
+              <b>Mobilier <em>& art de la table</em></b>
+              <small>Assises bambou, chargeurs &amp; verrerie</small>
             </div>
           </article>
 
@@ -183,12 +182,12 @@
           </article>
 
           <article class="pf-item pf-item--reg reveal" data-d="4" data-cat="baby-shower">
-            <image-slot id="rpf-7" src="assets/photos/baby-shower-arche.jpg" placeholder="Baby shower — arche de ballons, backdrop"></image-slot>
+            <image-slot id="rpf-7" src="assets/photos/baby-shower-salle.jpg" placeholder="Baby shower — mise en scène complète de la salle"></image-slot>
             <span class="pf-item__tag">Baby shower</span>
             <span class="pf-item__num">— 07</span>
             <div class="pf-item__meta">
-              <b>Arche <em>de ballons</em></b>
-              <small>Backdrop &amp; scénographie</small>
+              <b>Baby shower <em>& intime</em></b>
+              <small>Mise en scène complète</small>
             </div>
           </article>
         </div>
@@ -200,6 +199,46 @@
             <span class="arrow">→</span>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Les coulisses (making of) ========== -->
+  <!-- Vidéo auto-hébergée (~49 Mo), preload="none" : ne se charge qu'au clic.
+       Pour la production, préférer un hébergement YouTube / Vimeo et remplacer le <video> par l'iframe. -->
+  <section class="section coulisses" id="coulisses" data-screen-label="Coulisses">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Galerie</span>
+        <span class="vlabel is-current">Coulisses</span>
+        <span class="vlabel">Contact</span>
+      </div>
+      <span class="num">03</span>
+    </aside>
+    <span class="section-num">03</span>
+
+    <div class="wrap">
+      <div class="section__inner">
+        <div class="sec-head reveal">
+          <div class="sec-head__left">
+            <span class="eyebrow">03 — Les coulisses</span>
+            <h2 class="h1 sec-head__title">Le décor, <em>avant les invités</em>.</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lede">
+              Un événement se joue en amont : le montage, la mise en place, l'ajustement du moindre détail. Making of d'une installation signée Arc en Ciel.
+            </p>
+          </div>
+        </div>
+
+        <figure class="coulisses__video reveal">
+          <video controls preload="none" playsinline poster="assets/photos/reception-mariage-salle.jpg">
+            <source src="assets/video/deco-28-aout-2026.mp4" type="video/mp4" />
+            Votre navigateur ne peut pas lire cette vidéo.
+          </video>
+          <figcaption>— Making of · installation du 28 août 2026</figcaption>
+        </figure>
       </div>
     </div>
   </section>

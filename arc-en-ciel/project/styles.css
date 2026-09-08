@@ -2170,6 +2170,29 @@ image-slot {
 /* ----------- Page Réalisations ----------- */
 .realisations { background: var(--white); padding-top: clamp(24px, 3vw, 48px); }
 
+/* ----------- Les coulisses (vidéo making of) ----------- */
+.coulisses { background: var(--bone); border-top: 1px solid var(--line); }
+.coulisses__video {
+  margin: clamp(40px, 5vw, 64px) 0 0;
+  position: relative;
+}
+.coulisses__video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--ink);
+  border: 1px solid var(--line);
+}
+.coulisses__video figcaption {
+  margin-top: 16px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--stone);
+}
+
 /* ============================================================
    PAGE À PROPOS — Bafoussam × Paris
    ============================================================ */
