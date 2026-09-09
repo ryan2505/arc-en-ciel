@@ -1,2 +1,8 @@
 # Fichiers sources bruts (dump), non servis par le site
 arc-en-ciel/project/uploads/
+
+# Secrets / variables d'environnement — NE JAMAIS committer (clés Resend, Twilio, CallMeBot…)
+.env
+.env.*
+!.env.example
+
