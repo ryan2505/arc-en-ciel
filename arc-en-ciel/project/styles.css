@@ -504,7 +504,7 @@ ul, ol { list-style: none; }
   overflow: hidden;
   min-height: calc(100vh - 96px);
   display: grid;
-  grid-template-columns: var(--sidebar) 1.05fr 0.95fr;
+  grid-template-columns: var(--sidebar) 1fr 1.06fr;
 }
 .hero .sidebar-rail { position: relative; }
 .hero__copy {
@@ -1548,19 +1548,33 @@ image-slot {
 
 /* ----------- Responsive ----------- */
 @media (max-width: 1100px) {
-  .hero { grid-template-columns: var(--sidebar) 1fr; }
-  .hero__media { display: none; }
   :root { --sidebar: 56px; }
+  /* Le premier écran devient une image forte, presque plein cadre,
+     posée au-dessus du slogan. */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero .sidebar-rail { display: none; }
+  .hero__media {
+    display: block;
+    order: -1;
+    width: 100%;
+    min-height: min(66vh, 580px);
+  }
+  .hero__media::before {
+    background: linear-gradient(180deg, rgba(20,17,13,0.05) 0%, transparent 32%, transparent 54%, rgba(20,17,13,0.46));
+  }
 }
 /* Nav : menu réparti (2 gauche · logo centré · 2 droite) ; bascule burger sous 1024px */
 @media (max-width: 1024px) {
   .nav__menu { display: none; }
   .nav__burger { display: flex; }
-  .nav .wrap { grid-template-columns: 1fr auto; column-gap: 16px; height: 82px; }
-  .nav.is-scrolled .wrap { height: 70px; }
+  .nav .wrap { grid-template-columns: 1fr auto; column-gap: 16px; height: 90px; }
+  .nav.is-scrolled .wrap { height: 76px; }
   .nav__brand { justify-self: start; padding: 0; }
   .nav__brand img,
-  .nav.is-scrolled .nav__brand img { height: 44px; }
+  .nav.is-scrolled .nav__brand img { height: 58px; }
   .nav__cta { display: none; }
   .nav__right { justify-content: flex-end; }
 }
@@ -1608,7 +1622,8 @@ image-slot {
   .foot__big { font-size: 64px; }
   .testi-card { flex: 0 0 100%; }
   .editorial__copy { padding: 56px var(--pad); }
-  .nav__brand img { height: 38px; }
+  .nav__brand img { height: 50px; }
+  .hero__media { min-height: 56vh; }
   .fab__tip { display: none; }
 }
 
@@ -2833,6 +2848,142 @@ image-slot {
   }
   .people__route { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   NAV — sous-menu « Réalisations » (Corporate / Particuliers)
+   Menu déroulant sur écran large ; version dépliée dans le tiroir mobile.
+   ============================================================ */
+.nav__has-sub { position: relative; }
+.nav__sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(12px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px 44px;
+  min-width: 440px;
+  padding: 28px 34px 30px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 70px -28px rgba(20,17,13,0.24);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0.35s;
+  z-index: 5;
+}
+/* pont invisible : garde le survol continu entre le lien et le panneau */
+.nav__sub::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: -16px;
+  height: 16px;
+}
+.nav__has-sub:hover .nav__sub,
+.nav__has-sub:focus-within .nav__sub {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.nav__sub-col { display: flex; flex-direction: column; gap: 2px; }
+.nav__sub .nav__sub-head {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 0 0 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.nav__sub a {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--stone);
+  padding: 8px 0;
+  white-space: nowrap;
+}
+.nav__sub a::after { display: none; }
+.nav__sub a:hover { color: var(--maron-deep); }
+
+/* ----------- Tiroir mobile : sous-dossiers + CTA dédié ----------- */
+.drawer__menu .sub {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0 26px 8px;
+}
+.drawer__menu .sub__group {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--maron-deep);
+  font-weight: 600;
+  padding: 14px 0 4px;
+}
+.drawer__menu .sub a {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--stone);
+  padding: 9px 0;
+}
+.drawer__menu .sub a:hover { color: var(--maron); }
+
+.drawer__cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+  padding: 22px 24px;
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(19px, 5vw, 27px);
+  letter-spacing: -0.02em;
+  transition: background 0.4s var(--ease);
+}
+.drawer__cta:hover { background: var(--maron-deep); }
+.drawer__cta .num {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  opacity: 0.65;
+}
+.drawer__cta svg { margin-left: auto; flex-shrink: 0; }
+
+/* ----------- Hero : portée géographique explicite ----------- */
+.hero__foot { display: flex; flex-direction: column; gap: 16px; }
+.hero__reach {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  font-weight: 400;
+}
+.hero__reach b { color: var(--maron-deep); font-weight: 600; }
+
+/* ----------- Réalisations : accès rapide aux deux familles ----------- */
+.page-hero__jump { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 8px; }
+.page-hero__jump a {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--maron-deep);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--line-warm);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.page-hero__jump a:hover { color: var(--ink); border-color: var(--ink); }
 
 /* ----------- Motion : respect des préférences système ----------- */
 @media (prefers-reduced-motion: reduce) {

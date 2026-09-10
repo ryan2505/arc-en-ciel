@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>À propos d'Arc en Ciel | Maison événementielle à Bafoussam &amp; Paris</title>
-  <meta name="description" content="Arc en Ciel imagine, conçoit et met en scène des expériences sur mesure depuis son ancrage à Bafoussam, au Cameroun, avec une présence internationale à Paris, en France. Une Maison, deux territoires, une même direction artistique." />
+  <title>À propos d'Arc en Ciel | Maison événementielle au Cameroun &amp; à Paris</title>
+  <meta name="description" content="Arc en Ciel imagine, conçoit et met en scène des expériences sur mesure depuis son ancrage au Cameroun, avec une présence internationale à Paris, en France. Une Maison, deux territoires, une même direction artistique." />
   <meta name="theme-color" content="#FCFBF8" />
   <link rel="canonical" href="https://arc-en-ciel-nu.vercel.app/a-propos" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="À propos d'Arc en Ciel | Maison événementielle à Bafoussam & Paris" />
-  <meta property="og:description" content="Une histoire née au Cameroun. Une signature qui voyage. Fongué Yolande porte la vision, Mr Chris la direction artistique." />
+  <meta property="og:title" content="À propos d'Arc en Ciel | Maison événementielle au Cameroun & à Paris" />
+  <meta property="og:description" content="Une histoire née au Cameroun. Une signature qui voyage. Yolande Noutchogouin porte la vision, Christian Wabo la direction artistique." />
   <meta property="og:url" content="https://arc-en-ciel-nu.vercel.app/a-propos" />
   <meta property="og:image" content="https://arc-en-ciel-nu.vercel.app/assets/logo-full.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -26,13 +26,13 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Arc en Ciel",
-    "description": "Maison événementielle : direction artistique, conception et mise en scène d'expériences sur mesure, entre Bafoussam (Cameroun) et Paris (France).",
+    "description": "Maison événementielle : direction artistique, conception et mise en scène d'expériences sur mesure, entre le Cameroun et Paris (France).",
     "url": "https://arc-en-ciel-nu.vercel.app/",
     "logo": "https://arc-en-ciel-nu.vercel.app/assets/logo-full.jpg",
     "email": "arcenciel.event.groupe@gmail.com",
     "areaServed": ["CM", "FR"],
-    "founder": { "@type": "Person", "name": "Fongué Yolande", "jobTitle": "Fondatrice & Dirigeante" },
-    "employee": { "@type": "Person", "name": "Mr Chris", "jobTitle": "Directeur Artistique" },
+    "founder": { "@type": "Person", "name": "Yolande Noutchogouin", "jobTitle": "Fondatrice & Directrice" },
+    "employee": { "@type": "Person", "name": "Christian Wabo", "jobTitle": "Directeur artistique" },
     "contactPoint": [
       { "@type": "ContactPoint", "telephone": "+237653267335", "areaServed": "CM", "contactType": "Direction" },
       { "@type": "ContactPoint", "telephone": "+33695837258", "areaServed": "FR", "contactType": "Direction artistique" }
@@ -47,18 +47,37 @@
     <div class="wrap">
       <ul class="nav__menu nav__menu--l">
         <li><a href="services.html">Services</a></li>
-        <li><a href="realisations.html">Réalisations</a></li>
+        <li class="nav__has-sub">
+          <a href="realisations.html">Réalisations</a>
+          <div class="nav__sub">
+            <div class="nav__sub-col">
+              <a href="realisations.html#corporate" class="nav__sub-head">Corporate</a>
+              <a href="realisations.html#inauguration">Inauguration d'agence</a>
+              <a href="realisations.html#seminaire">Séminaire</a>
+              <a href="realisations.html#conference">Conférence</a>
+              <a href="realisations.html#fete-annuelle">Fête annuelle</a>
+              <a href="realisations.html#dinner-affaires">Dîner d'affaires</a>
+            </div>
+            <div class="nav__sub-col">
+              <a href="realisations.html#particuliers" class="nav__sub-head">Particuliers</a>
+              <a href="realisations.html#mariages">Mariages</a>
+              <a href="realisations.html#babyshower">Baby shower</a>
+              <a href="realisations.html#anniversaire">Anniversaire</a>
+              <a href="realisations.html#funerailles">Funérailles</a>
+            </div>
+          </div>
+        </li>
       </ul>
       <a href="index.html" class="nav__brand" aria-label="Arc en Ciel — Accueil">
         <img src="assets/logo-full.jpg" alt="Arc en Ciel — Event Planner Designer" />
       </a>
       <div class="nav__right">
         <ul class="nav__menu nav__menu--r">
-          <li><a href="a-propos.html" class="is-active">Maison</a></li>
+          <li><a href="a-propos.html" class="is-active">La Maison</a></li>
           <li><a href="international.html">International</a></li>
         </ul>
-        <a href="contact.html" class="nav__cta">
-          Nous contacter
+        <a href="contact.html?type=devis" class="nav__cta">
+          Demander un devis
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2"/></svg>
         </a>
         <button class="nav__burger" id="burger" aria-label="Menu">
@@ -75,18 +94,37 @@
     <ul class="drawer__menu">
       <li><a href="index.html"><span class="num">00</span> Accueil</a></li>
       <li><a href="services.html"><span class="num">01</span> Services</a></li>
-      <li><a href="realisations.html"><span class="num">02</span> Réalisations</a></li>
-      <li><a href="a-propos.html"><span class="num">03</span> Maison</a></li>
+      <li>
+        <a href="realisations.html"><span class="num">02</span> Réalisations</a>
+        <div class="sub">
+          <span class="sub__group">Corporate</span>
+          <a href="realisations.html#inauguration">Inauguration d'agence</a>
+          <a href="realisations.html#seminaire">Séminaire</a>
+          <a href="realisations.html#conference">Conférence</a>
+          <a href="realisations.html#fete-annuelle">Fête annuelle</a>
+          <a href="realisations.html#dinner-affaires">Dîner d'affaires</a>
+          <span class="sub__group">Particuliers</span>
+          <a href="realisations.html#mariages">Mariages</a>
+          <a href="realisations.html#babyshower">Baby shower</a>
+          <a href="realisations.html#anniversaire">Anniversaire</a>
+          <a href="realisations.html#funerailles">Funérailles</a>
+        </div>
+      </li>
+      <li><a href="a-propos.html"><span class="num">03</span> La Maison</a></li>
       <li><a href="international.html"><span class="num">04</span> International</a></li>
       <li><a href="#contact"><span class="num">05</span> Contact</a></li>
     </ul>
+    <a href="contact.html?type=devis" class="drawer__cta">
+      <span class="num">06</span> Demander un devis
+      <svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg>
+    </a>
     <div class="drawer__foot">
       <div>
         <h6>Cameroun</h6>
-        Bafoussam<br />+237 6 53 26 73 35
+        +237 6 53 26 73 35
       </div>
       <div>
-        <h6>Europe</h6>
+        <h6>France</h6>
         Paris<br />+33 6 95 83 72 58
       </div>
     </div>
@@ -98,7 +136,7 @@
       <span class="tag">ARC EN CIEL</span>
       <div class="vlabels">
         <span class="vlabel is-current">La Maison</span>
-        <span class="vlabel">Bafoussam</span>
+        <span class="vlabel">Cameroun</span>
         <span class="vlabel">Paris</span>
       </div>
       <span class="num">01</span>
@@ -111,7 +149,7 @@
         <span class="eyebrow">La Maison Arc en Ciel</span>
         <h1 class="page-hero__title">Une histoire née au Cameroun. Une <em>signature</em> qui voyage.</h1>
         <p class="page-hero__lead">
-          Arc en Ciel imagine, conçoit et met en scène des expériences singulières depuis son ancrage au Cameroun, à Bafoussam, avec une présence internationale à Paris.
+          Arc en Ciel imagine, conçoit et met en scène des expériences singulières depuis son ancrage au Cameroun, avec une présence internationale à Paris.
         </p>
         <div class="hero__ctas">
           <a href="#approche" class="btn btn--lg">
@@ -209,12 +247,12 @@
         <div class="people__grid reveal">
           <article class="person">
             <div class="person__media">
-              <image-slot id="ap-yolande" placeholder="[PHOTO FONGUÉ YOLANDE] — portrait éditorial, naturel, intemporel"></image-slot>
+              <image-slot id="ap-yolande" placeholder="[PHOTO YOLANDE NOUTCHOGOUIN] — portrait éditorial, naturel, intemporel"></image-slot>
             </div>
             <div class="person__body">
-              <span class="person__role">Fondatrice &amp; Dirigeante</span>
-              <h3 class="person__name">Fongué Yolande</h3>
-              <span class="person__loc">Bafoussam · Cameroun</span>
+              <span class="person__role">Fondatrice &amp; Directrice</span>
+              <h3 class="person__name">Yolande Noutchogouin</h3>
+              <span class="person__loc">Cameroun</span>
               <p class="person__text">
                 La femme derrière la vision d'Arc en Ciel. Elle porte l'identité de la Maison, sa direction entrepreneuriale et la relation humaine qui accompagne chaque projet, de la première conversation jusqu'à l'événement.
               </p>
@@ -226,12 +264,12 @@
 
           <article class="person">
             <div class="person__media">
-              <image-slot id="ap-chris" placeholder="[PHOTO MR CHRIS] — portrait éditorial, naturel, intemporel"></image-slot>
+              <image-slot id="ap-chris" placeholder="[PHOTO CHRISTIAN WABO] — portrait éditorial, naturel, intemporel"></image-slot>
             </div>
             <div class="person__body">
-              <span class="person__role">Directeur Artistique</span>
-              <h3 class="person__name">Mr Chris</h3>
-              <span class="person__loc">Paris · France</span>
+              <span class="person__role">Directeur artistique</span>
+              <h3 class="person__name">Christian Wabo</h3>
+              <span class="person__loc">Paris, France</span>
               <p class="person__text">
                 Celui qui donne une forme artistique à la vision d'Arc en Ciel. Il porte la direction artistique, les concepts, les univers visuels et la cohérence esthétique des expériences créées par la Maison.
               </p>
@@ -243,7 +281,7 @@
         </div>
 
         <div class="people__route reveal" aria-hidden="true">
-          <b>Bafoussam</b>
+          <b>Cameroun</b>
           <span class="l"></span>
           <b>Paris</b>
         </div>
@@ -251,23 +289,23 @@
     </div>
   </section>
 
-  <!-- ========== 04 · Bafoussam ========== -->
+  <!-- ========== 04 · Cameroun ========== -->
   <section class="editorial" data-screen-label="Ancrage">
     <div class="editorial__media">
-      <image-slot id="ap-baf" src="assets/photos/ceremonie-traditionnelle.jpg" placeholder="Ancrage Arc en Ciel — Bafoussam, matières et lumière"></image-slot>
+      <image-slot id="ap-baf" src="assets/photos/ceremonie-traditionnelle.jpg" placeholder="Ancrage Arc en Ciel — Cameroun, matières et lumière"></image-slot>
       <div class="stamp">
         <small>L'ancrage</small>
-        <b>Bafoussam — Cameroun</b>
+        <b>Cameroun</b>
       </div>
     </div>
     <div class="editorial__copy">
       <span class="eyebrow">01 — L'ancrage</span>
-      <h2 class="h1">Bafoussam, là où la <em>Maison</em> s'ancre.</h2>
+      <h2 class="h1">Le Cameroun, là où la <em>Maison</em> s'ancre.</h2>
       <p class="editorial__quote">
         « Une Maison se souvient toujours d'où elle vient. »
       </p>
       <p class="lede">
-        Bafoussam est le territoire de base d'Arc en Ciel au Cameroun. C'est là que la Maison s'est construite, que sa vision s'est formée, et que sa relation au client s'exerce au plus près. Cet ancrage n'est pas un décor : c'est l'origine de sa manière de penser un événement — avec proximité, authenticité et exigence.
+        Le Cameroun est le territoire de base d'Arc en Ciel. C'est là que la Maison s'est construite, que sa vision s'est formée, et que sa relation au client s'exerce au plus près. Cet ancrage n'est pas un décor : c'est l'origine de sa manière de penser un événement — avec proximité, authenticité et exigence.
       </p>
     </div>
   </section>
@@ -294,12 +332,12 @@
     </div>
   </section>
 
-  <!-- ========== 06 · BAFOUSSAM × PARIS ========== -->
-  <section class="section bxp" data-screen-label="Bafoussam × Paris">
+  <!-- ========== 06 · CAMEROUN × PARIS ========== -->
+  <section class="section bxp" data-screen-label="Cameroun × Paris">
     <div class="wrap">
       <div class="bxp__inner reveal">
         <div class="bxp__type">
-          <span class="bxp__word">BAFOUSSAM</span>
+          <span class="bxp__word">CAMEROUN</span>
           <span class="bxp__x bxp__x--d" aria-hidden="true">×</span>
           <span class="bxp__x bxp__x--m" aria-hidden="true">Arc en Ciel</span>
           <span class="bxp__word">PARIS</span>
@@ -320,7 +358,7 @@
     <aside class="sidebar-rail" aria-hidden="true">
       <span class="tag">ARC EN CIEL</span>
       <div class="vlabels">
-        <span class="vlabel">Bafoussam × Paris</span>
+        <span class="vlabel">Cameroun × Paris</span>
         <span class="vlabel is-current">La vision</span>
         <span class="vlabel">La direction artistique</span>
       </div>
@@ -337,7 +375,7 @@
           </div>
           <div class="sec-head__aside">
             <p class="lede">
-              Madame Fongué Yolande porte la vision de la Maison. Avant toute proposition, il y a l'écoute : comprendre le client, l'intention derrière l'événement, ce qui doit rester une fois la soirée terminée.
+              Madame Yolande Noutchogouin porte la vision de la Maison. Avant toute proposition, il y a l'écoute : comprendre le client, l'intention derrière l'événement, ce qui doit rester une fois la soirée terminée.
             </p>
           </div>
         </div>
@@ -351,7 +389,7 @@
     </div>
   </section>
 
-  <!-- ========== 08 · La signature de Mr Chris ========== -->
+  <!-- ========== 08 · La signature de Christian Wabo ========== -->
   <section class="section iwhy" data-screen-label="La direction artistique">
     <aside class="sidebar-rail" aria-hidden="true">
       <span class="tag">ARC EN CIEL</span>
@@ -373,7 +411,7 @@
           </div>
           <div class="sec-head__aside">
             <p class="lede">
-              Mr Chris est le Directeur Artistique d'Arc en Ciel. Il traduit la vision en création : concepts, compositions, scénographie, matières, volumes, ambiances — et la cohérence visuelle qui tient l'ensemble.
+              Christian Wabo est le Directeur artistique d'Arc en Ciel. Il traduit la vision en création : concepts, compositions, scénographie, matières, volumes, ambiances — et la cohérence visuelle qui tient l'ensemble.
             </p>
           </div>
         </div>
@@ -398,7 +436,7 @@
           </div>
           <div class="sec-head__aside">
             <p class="lede">
-              La Maison repose sur une complémentarité simple : Yolande porte la vision, Mr Chris porte la direction artistique, et Arc en Ciel donne vie à l'ensemble.
+              La Maison repose sur une complémentarité simple : Yolande porte la vision, Christian Wabo porte la direction artistique, et Arc en Ciel donne vie à l'ensemble.
             </p>
           </div>
         </div>
@@ -410,7 +448,7 @@
           </div>
           <span class="equation__op" aria-hidden="true">+</span>
           <div class="equation__cell">
-            <b>Mr Chris</b>
+            <b>Christian Wabo</b>
             <span>Direction artistique</span>
           </div>
           <span class="equation__op" aria-hidden="true">=</span>
@@ -493,7 +531,7 @@
           <h2 class="h1 intl-teaser__title">Une signature <em>qui voyage</em>.</h2>
           <div class="intl-teaser__aside">
             <p class="lede">
-              Depuis Bafoussam, Arc en Ciel ouvre désormais une nouvelle perspective internationale, avec Paris comme point d'ancrage européen. Cette évolution ne change pas l'identité de la Maison — elle l'étend.
+              Depuis le Cameroun, Arc en Ciel ouvre désormais une nouvelle perspective internationale, avec Paris comme point d'ancrage européen. Cette évolution ne change pas l'identité de la Maison — elle l'étend.
             </p>
             <a href="international.html" class="link">
               Découvrir Arc en Ciel International
@@ -527,12 +565,12 @@
 
         <div class="cta__contact">
           <div>
-            Cameroun — Fongué Yolande
-            <b>Fondatrice &amp; Dirigeante<br />Bafoussam, Cameroun<br /><a href="tel:+237653267335">+237 6 53 26 73 35</a></b>
+            Cameroun — Yolande Noutchogouin
+            <b>Fondatrice &amp; Directrice<br />Cameroun<br /><a href="tel:+237653267335">+237 6 53 26 73 35</a></b>
           </div>
           <div>
-            Europe — Mr Chris
-            <b>Directeur Artistique<br />Paris, France<br /><a href="tel:+33695837258">+33 6 95 83 72 58</a></b>
+            France — Christian Wabo
+            <b>Directeur artistique<br />Paris, France<br /><a href="tel:+33695837258">+33 6 95 83 72 58</a></b>
           </div>
           <div>
             Courriel
@@ -553,7 +591,7 @@
           <div class="foot__brand">
             <img src="assets/logo-full.jpg" alt="Arc en Ciel" />
           </div>
-          <p>Maison événementielle. Une histoire née à Bafoussam, au Cameroun — une signature qui voyage jusqu'à Paris.</p>
+          <p>Maison événementielle. Une histoire née au Cameroun — une signature qui voyage jusqu'à Paris.</p>
           <form class="foot__news" onsubmit="event.preventDefault(); this.classList.add('is-done');">
             <input type="email" placeholder="Votre courriel" required />
             <button type="submit">S'abonner</button>
@@ -566,27 +604,27 @@
           <ul>
             <li><a href="services.html">Services</a></li>
             <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="a-propos.html">Maison</a></li>
+            <li><a href="a-propos.html">La Maison</a></li>
             <li><a href="international.html">International</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div class="foot__col">
-          <h5>Cameroun — Bafoussam</h5>
+          <h5>Cameroun</h5>
           <ul>
-            <li><a href="tel:+237653267335">Fongué Yolande · +237 6 53 26 73 35</a></li>
-            <li>Fondatrice &amp; Dirigeante</li>
-            <li>Bafoussam, Cameroun</li>
+            <li><a href="tel:+237653267335">Yolande Noutchogouin · +237 6 53 26 73 35</a></li>
+            <li>Fondatrice &amp; Directrice</li>
+            <li>Cameroun</li>
             <li><a href="https://www.instagram.com/arc_en_ciel_by_sw" target="_blank" rel="noopener">Instagram · @arc_en_ciel_by_sw</a></li>
           </ul>
         </div>
 
         <div class="foot__col">
-          <h5>Europe — Paris</h5>
+          <h5>France — Paris</h5>
           <ul>
-            <li><a href="tel:+33695837258">Mr Chris · +33 6 95 83 72 58</a></li>
-            <li>Directeur Artistique</li>
+            <li><a href="tel:+33695837258">Christian Wabo · +33 6 95 83 72 58</a></li>
+            <li>Directeur artistique</li>
             <li>Paris, France</li>
             <li><a href="https://www.instagram.com/arcenciel.group" target="_blank" rel="noopener">Instagram · @arcenciel.group</a></li>
             <li><a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a></li>
@@ -595,7 +633,7 @@
       </div>
 
       <div class="foot__bottom">
-        <span>© 2026 Arc en Ciel — Bafoussam × Paris. Tous droits réservés.</span>
+        <span>© 2026 Arc en Ciel — Cameroun × Paris. Tous droits réservés.</span>
         <div class="foot__socials">
           <a href="https://www.instagram.com/arc_en_ciel_by_sw" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
