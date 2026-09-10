@@ -1549,21 +1549,24 @@ image-slot {
 /* ----------- Responsive ----------- */
 @media (max-width: 1100px) {
   :root { --sidebar: 56px; }
-  /* Le premier écran devient une image forte, presque plein cadre,
-     posée au-dessus du slogan. */
+  /* Sur mobile : pas d'image dans le hero — un premier écran typographique
+     plein cadre. Le titre occupe toute la largeur, le contenu remplit la hauteur. */
   .hero {
     grid-template-columns: 1fr;
-    min-height: 0;
+    min-height: calc(100vh - 90px);
   }
   .hero .sidebar-rail { display: none; }
-  .hero__media {
-    display: block;
-    order: -1;
-    width: 100%;
-    min-height: min(66vh, 580px);
-  }
-  .hero__media::before {
-    background: linear-gradient(180deg, rgba(20,17,13,0.05) 0%, transparent 32%, transparent 54%, rgba(20,17,13,0.46));
+  .hero__media { display: none; }
+  .hero__copy { gap: clamp(28px, 5vw, 48px); }
+  .hero__title { font-size: clamp(52px, 11vw, 92px); }
+  /* le filigrane du monogramme occupe l'espace laissé libre à droite du titre */
+  .hero__monogram-bg {
+    top: 8%;
+    bottom: auto;
+    right: -26%;
+    width: min(78vw, 460px);
+    height: min(78vw, 460px);
+    opacity: 0.07;
   }
 }
 /* Nav : menu réparti (2 gauche · logo centré · 2 droite) ; bascule burger sous 1024px */
@@ -1612,7 +1615,7 @@ image-slot {
   .section-num { left: 0; }
   .hero { grid-template-columns: 1fr; }
   .hero__copy { padding: 56px var(--pad); gap: 40px; }
-  .hero__title { font-size: clamp(44px, 12vw, 64px); }
+  .hero__title { font-size: clamp(48px, 15vw, 76px); }
   .hero__meta { grid-template-columns: 1fr 1fr; gap: 20px; }
   .svc-grid { grid-template-columns: 1fr; }
   .proc-grid { grid-template-columns: 1fr; }
@@ -1623,7 +1626,6 @@ image-slot {
   .testi-card { flex: 0 0 100%; }
   .editorial__copy { padding: 56px var(--pad); }
   .nav__brand img { height: 50px; }
-  .hero__media { min-height: 56vh; }
   .fab__tip { display: none; }
 }
 
