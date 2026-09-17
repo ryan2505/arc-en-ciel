@@ -315,12 +315,12 @@ ul, ol { list-style: none; }
   padding: 0 clamp(8px, 1.4vw, 22px);
 }
 .nav__brand img {
-  height: 58px;
+  height: 72px;
   width: auto;
   object-fit: contain;
   transition: height 0.45s var(--ease);
 }
-.nav.is-scrolled .nav__brand img { height: 46px; }
+.nav.is-scrolled .nav__brand img { height: 58px; }
 
 .nav__right {
   display: flex;
@@ -1573,11 +1573,11 @@ image-slot {
 @media (max-width: 1024px) {
   .nav__menu { display: none; }
   .nav__burger { display: flex; }
-  .nav .wrap { grid-template-columns: 1fr auto; column-gap: 16px; height: 90px; }
-  .nav.is-scrolled .wrap { height: 76px; }
+  .nav .wrap { grid-template-columns: 1fr auto; column-gap: 16px; height: 96px; }
+  .nav.is-scrolled .wrap { height: 82px; }
   .nav__brand { justify-self: start; padding: 0; }
   .nav__brand img,
-  .nav.is-scrolled .nav__brand img { height: 58px; }
+  .nav.is-scrolled .nav__brand img { height: 66px; }
   .nav__cta { display: none; }
   .nav__right { justify-content: flex-end; }
 }
@@ -1625,7 +1625,7 @@ image-slot {
   .foot__big { font-size: 64px; }
   .testi-card { flex: 0 0 100%; }
   .editorial__copy { padding: 56px var(--pad); }
-  .nav__brand img { height: 50px; }
+  .nav__brand img { height: 58px; }
   .fab__tip { display: none; }
 }
 
@@ -2440,6 +2440,7 @@ image-slot {
 }
 .qf-upload__drop:hover,
 .qf-upload__drop.is-drag { border-color: var(--maron); background: var(--champagne); }
+.qf-upload__drop[hidden] { display: none; }
 .qf-upload__drop span {
   font-size: 12px;
   letter-spacing: 0.16em;
@@ -2448,6 +2449,31 @@ image-slot {
   color: var(--ink);
 }
 .qf-upload__drop small { font-size: 12px; color: var(--stone); }
+
+/* ----- Fichier unique attaché (CV, portfolio…) ----- */
+.upload-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  background: var(--champagne);
+  font-size: 13px;
+  color: var(--ink);
+}
+.upload-chip[hidden] { display: none; }
+.upload-chip button {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--maron-deep);
+  flex-shrink: 0;
+  transition: color 0.3s var(--ease);
+}
+.upload-chip button:hover { color: var(--ink); }
+
 .qf-upload__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));

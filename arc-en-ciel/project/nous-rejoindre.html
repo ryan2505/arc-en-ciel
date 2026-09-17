@@ -350,8 +350,19 @@
               </select>
             </div>
             <div class="field field--full">
-              <label for="jf-cv">Lien CV / portfolio (LinkedIn, Drive…)</label>
-              <input class="qf-input" type="text" id="jf-cv" placeholder="https://…" />
+              <label for="jf-cv-file">Votre CV</label>
+              <div class="qf-upload__drop" id="jfCvDrop" tabindex="0" role="button" aria-label="Déposer ou choisir votre CV">
+                <span>Déposer votre CV ici, ou cliquer pour parcourir</span>
+                <small>PDF, Word ou image — 3 Mo maximum</small>
+                <input type="file" id="jf-cv-file" accept=".pdf,.doc,.docx,image/*" hidden />
+              </div>
+              <div class="upload-chip" id="jfCvChip" hidden>
+                <span id="jfCvName"></span>
+                <button type="button" id="jfCvRemove">Retirer</button>
+              </div>
+              <p class="qf-err" id="jfCvErr"></p>
+              <label for="jf-cv-link" class="qf-hint">Vous pouvez aussi indiquer un lien vers votre CV ou portfolio (LinkedIn, Drive…)</label>
+              <input class="qf-input" type="text" id="jf-cv-link" placeholder="https://…" />
             </div>
             <div class="field field--full">
               <label for="jf-msg">Quelques lignes sur ce qui vous anime</label>
@@ -407,7 +418,7 @@
         <div class="foot__col">
           <h5>Cameroun</h5>
           <ul>
-            <li><a href="tel:+237653267335">Yolande Noutchogouin · +237 6 53 26 73 35</a></li>
+            <li><a href="tel:+237653267335">Yolande Noutchogouin<br />+237 6 53 26 73 35</a></li>
             <li>Fondatrice &amp; Directrice</li>
             <li>Cameroun</li>
             <li><a href="https://www.instagram.com/arc_en_ciel_by_sw" target="_blank" rel="noopener">Instagram · @arc_en_ciel_by_sw</a></li>
@@ -415,9 +426,9 @@
         </div>
 
         <div class="foot__col">
-          <h5>France — Paris</h5>
+          <h5>France</h5>
           <ul>
-            <li><a href="tel:+33695837258">Christian Wabo · +33 6 95 83 72 58</a></li>
+            <li><a href="tel:+33695837258">Christian Wabo<br />+33 6 95 83 72 58</a></li>
             <li>Directeur artistique</li>
             <li>Paris, France</li>
             <li><a href="https://www.instagram.com/arcenciel.group" target="_blank" rel="noopener">Instagram · @arcenciel.group</a></li>
@@ -486,6 +497,53 @@
       const submitBtn = document.getElementById("jfSubmit");
       const openedAt = Date.now();
       const EMAIL = "arcenciel.event.groupe@gmail.com";
+      const MAX_CV_BYTES = 3 * 1024 * 1024; // 3 Mo — marge sous la limite d'attachement du serveur
+
+      // ---- Upload du CV (glisser-déposer ou clic) ----
+      const drop = document.getElementById("jfCvDrop");
+      const fileInput = document.getElementById("jf-cv-file");
+      const chip = document.getElementById("jfCvChip");
+      const chipName = document.getElementById("jfCvName");
+      const removeBtn = document.getElementById("jfCvRemove");
+      const errEl = document.getElementById("jfCvErr");
+      let cvAttachment = null; // { filename, content (base64) }
+
+      function showCvError(msg) {
+        errEl.textContent = msg;
+        errEl.style.display = msg ? "block" : "none";
+      }
+      function setCvFile(file) {
+        showCvError("");
+        if (!file) return;
+        if (file.size > MAX_CV_BYTES) {
+          showCvError("Fichier trop volumineux — 3 Mo maximum.");
+          fileInput.value = "";
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64 = String(reader.result).split(",")[1] || "";
+          cvAttachment = { filename: file.name, content: base64 };
+          chipName.textContent = file.name + " (" + Math.round(file.size / 1024) + " Ko)";
+          chip.hidden = false;
+          drop.hidden = true;
+        };
+        reader.onerror = () => showCvError("Impossible de lire ce fichier — réessayez.");
+        reader.readAsDataURL(file);
+      }
+      drop.addEventListener("click", () => fileInput.click());
+      drop.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fileInput.click(); } });
+      fileInput.addEventListener("change", () => setCvFile(fileInput.files[0]));
+      ["dragover", "dragenter"].forEach((evt) => drop.addEventListener(evt, (e) => { e.preventDefault(); drop.classList.add("is-drag"); }));
+      ["dragleave", "drop"].forEach((evt) => drop.addEventListener(evt, (e) => { e.preventDefault(); drop.classList.remove("is-drag"); }));
+      drop.addEventListener("drop", (e) => setCvFile(e.dataTransfer.files[0]));
+      removeBtn.addEventListener("click", () => {
+        cvAttachment = null;
+        fileInput.value = "";
+        chip.hidden = true;
+        drop.hidden = false;
+        showCvError("");
+      });
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -501,11 +559,13 @@
           "E-mail": g("jf-email"),
           "Ville": g("jf-city"),
           "Domaine souhaité": g("jf-domain"),
-          "CV / Portfolio": g("jf-cv"),
+          "CV joint": cvAttachment ? cvAttachment.filename : "—",
+          "Lien CV / Portfolio": g("jf-cv-link"),
           "Message": g("jf-msg"),
         };
         const lines = ["NOUVELLE CANDIDATURE — ARC EN CIEL", ""];
-        Object.entries(data).forEach(([k, v]) => { if (v) lines.push(k + " : " + v); });
+        Object.entries(data).forEach(([k, v]) => { if (v && v !== "—") lines.push(k + " : " + v); });
+        if (cvAttachment) lines.push("", "⚠ Pensez à joindre le CV (" + cvAttachment.filename + ") manuellement si vous envoyez cet e-mail vous-même.");
         lines.push("", "— Envoyé depuis le formulaire « Nous rejoindre » du site.");
         const brief = lines.join("\n");
         const subject = "Candidature — Nous rejoindre — " + (data["Nom & prénom"] || "Sans nom");
@@ -518,6 +578,7 @@
             body: JSON.stringify({
               data,
               brief,
+              images: cvAttachment ? [cvAttachment] : [],
               company_website: document.getElementById("jf-hp").value,
               elapsed: Date.now() - openedAt,
             }),
@@ -532,7 +593,7 @@
 
         okBox.textContent = delivered
           ? "Merci — votre candidature vient d'être transmise à l'équipe Arc en Ciel. Nous revenons vers vous sous quelques jours."
-          : "Votre messagerie s'est ouverte avec le récapitulatif de votre candidature — il ne reste qu'à l'envoyer.";
+          : "Votre messagerie s'est ouverte avec le récapitulatif de votre candidature — il ne reste qu'à l'envoyer" + (cvAttachment ? " et à joindre votre CV" : "") + ".";
         wrap.classList.add("is-sent");
         form.querySelectorAll("input, select, textarea, button").forEach((el) => (el.disabled = true));
         okBox.scrollIntoView({ behavior: "smooth", block: "center" });
