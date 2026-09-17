@@ -2889,6 +2889,7 @@ image-slot {
   pointer-events: auto;
   transform: translateY(0);
 }
+.nav__sub--single { grid-template-columns: 1fr; min-width: 250px; }
 .nav__sub-col { display: flex; flex-direction: column; gap: 2px; }
 .nav__sub .nav__sub-head {
   font-family: var(--font-sans);
