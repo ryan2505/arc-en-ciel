@@ -1,10 +1,15 @@
 /**
- * Arc en Ciel — réception automatique des demandes de proposition.
+ * Arc en Ciel — réception automatique des demandes du site.
  *
  * Fonction serverless Vercel (dossier /api détecté automatiquement, runtime Node).
- * Déployée à l'URL  /api/lead  — appelée en POST par le formulaire de contact.html.
+ * Déployée à l'URL  /api/lead  — appelée en POST par tout formulaire du site :
+ * demande de proposition (contact.html), candidature (nous-rejoindre.html)
+ * et demande de partenariat (collaboration.html). Le payload est générique
+ * ({ data, brief, images?, company_website, elapsed }) — chaque formulaire
+ * choisit ses propres clés pour `data` ; ajouter "Type de demande" personnalise
+ * l'objet de l'e-mail et l'en-tête du message WhatsApp.
  *
- * À l'envoi du formulaire, cette fonction transmet le brief :
+ * À l'envoi d'un formulaire, cette fonction transmet le brief :
  *   1. par e-mail  → boîte professionnelle de la Maison (avec les photos en pièces jointes)
  *   2. par WhatsApp → numéro de la Maison (résumé court)
  *
@@ -73,21 +78,26 @@ function buildHtml(data) {
 
 function buildWhatsApp(data) {
   const g = (k) => (data && data[k] ? String(data[k]).trim() : "");
+  const kind = g("Type de demande");
   const parts = [
-    "🔔 *Nouveau projet — Arc en Ciel*",
+    kind ? "🔔 *" + kind + " — Arc en Ciel*" : "🔔 *Nouveau projet — Arc en Ciel*",
     g("Type d'événement") && "Événement : " + g("Type d'événement"),
     g("Date") && "Date : " + g("Date"),
     (g("Ville") || g("Pays")) && "Lieu : " + [g("Ville"), g("Pays")].filter(Boolean).join(", "),
     g("Invités") && "Invités : " + g("Invités"),
     g("Budget") && "Budget : " + g("Budget"),
     g("Prestation") && "Prestation : " + g("Prestation"),
+    g("Structure") && "Structure : " + g("Structure"),
+    g("Domaine d'activité") && "Domaine : " + g("Domaine d'activité"),
+    g("Domaine souhaité") && "Domaine souhaité : " + g("Domaine souhaité"),
+    g("Zone d'intervention") && "Zone : " + g("Zone d'intervention"),
     "",
     g("Nom & prénom") && g("Nom & prénom"),
     g("Téléphone") && "Tél : " + g("Téléphone"),
     g("E-mail") && "Mail : " + g("E-mail"),
     "",
     "Détails complets envoyés par e-mail.",
-  ].filter((x) => x !== undefined && x !== null && x !== false);
+  ].filter((x) => x !== undefined && x !== null && x !== false && x !== "");
   return parts.join("\n");
 }
 
@@ -105,8 +115,7 @@ async function sendEmail(data, images) {
   }
 
   const subject =
-    "Nouveau projet — " +
-    (data["Type d'événement"] || "Événement") +
+    (data["Type de demande"] || "Nouveau projet — " + (data["Type d'événement"] || "Événement")) +
     (data["Nom & prénom"] ? " — " + data["Nom & prénom"] : "");
 
   const res = await fetch("https://api.resend.com/emails", {

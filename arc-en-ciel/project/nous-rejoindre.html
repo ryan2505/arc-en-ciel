@@ -272,23 +272,102 @@
     </div>
   </section>
 
-  <!-- ========== CTA ========== -->
-  <section class="cta" data-screen-label="Candidature">
+  <!-- ========== Candidature ========== -->
+  <section class="section qf-section" id="candidature" data-screen-label="Candidature">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Profils</span>
+        <span class="vlabel is-current">Candidature</span>
+        <span class="vlabel">Contact</span>
+      </div>
+      <span class="num">04</span>
+    </aside>
+    <span class="section-num">04</span>
+
     <div class="wrap">
-      <div class="cta__inner reveal">
-        <span class="eyebrow cta__eyebrow">Candidature spontanée</span>
-        <h2 class="cta__title">Une place vous attend<br/>peut-être <em>parmi nous</em>.</h2>
-        <p class="cta__sub">
-          Envoyez-nous quelques lignes sur ce qui vous anime, votre CV, et le domaine qui vous intéresse. Nous revenons vers chaque candidature sous quelques jours.
-        </p>
-        <div class="cta__ctas">
-          <a href="mailto:arcenciel.event.groupe@gmail.com?subject=Candidature%20%E2%80%94%20Nous%20rejoindre&body=Bonjour%2C%0A%0AJe%20souhaite%20rejoindre%20la%20Maison%20Arc%20en%20Ciel.%0A%0ADomaine%20qui%20m'int%C3%A9resse%20%3A%20%0AVille%20%2Fpays%20%3A%20%0A%0AMerci%20de%20trouver%20mon%20CV%20en%20pi%C3%A8ce%20jointe.%0A" class="btn btn--lg" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
-            <span>Envoyer ma candidature</span>
-            <span class="arrow"><svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
-          </a>
-          <a href="https://wa.me/237653267335?text=Bonjour%20Arc%20en%20Ciel%2C%20je%20souhaite%20rejoindre%20votre%20%C3%A9quipe%20(candidature)." target="_blank" rel="noopener" class="btn btn--lg btn--ghost">
-            <span>Postuler sur WhatsApp</span>
-          </a>
+      <div class="section__inner">
+        <div class="sec-head reveal">
+          <div class="sec-head__left">
+            <span class="eyebrow">04 — Candidature spontanée</span>
+            <h2 class="h1 sec-head__title">Envoyer <em>ma candidature</em>.</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lede">
+              Quelques minutes suffisent. Nous revenons vers chaque candidature sous quelques jours pour un premier échange.
+            </p>
+          </div>
+        </div>
+
+        <div class="cform-wrap reveal" id="jobFormWrap">
+          <div class="cform-aside">
+            <div class="cform-aside__block">
+              <h4>Comment ça se passe</h4>
+              <p>01 — Vous postulez, ici ou par e-mail / WhatsApp.<br/>02 — Un premier échange, pour se rencontrer.<br/>03 — Selon le profil, une rencontre à l'atelier.</p>
+            </div>
+            <div class="cform-aside__block">
+              <h4>Nous écrire directement</h4>
+              <a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a>
+              <a href="https://wa.me/237653267335?text=Bonjour%20Arc%20en%20Ciel%2C%20je%20souhaite%20rejoindre%20votre%20%C3%A9quipe%20(candidature).">WhatsApp — +237 6 53 26 73 35</a>
+            </div>
+          </div>
+
+          <form class="cform" id="jobForm" novalidate autocomplete="on">
+            <div class="qf-hp" aria-hidden="true">
+              <label for="jf-hp">Votre site web</label>
+              <input type="text" id="jf-hp" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <label for="jf-name">Nom &amp; prénom *</label>
+              <input class="qf-input" type="text" id="jf-name" required />
+            </div>
+            <div class="field">
+              <label for="jf-phone">Téléphone *</label>
+              <input class="qf-input" type="tel" id="jf-phone" required />
+            </div>
+            <div class="field">
+              <label for="jf-email">E-mail</label>
+              <input class="qf-input" type="email" id="jf-email" />
+            </div>
+            <div class="field">
+              <label for="jf-city">Ville / pays</label>
+              <input class="qf-input" type="text" id="jf-city" placeholder="Ex. Bafoussam, Cameroun" />
+            </div>
+            <div class="field field--full">
+              <label for="jf-domain">Domaine qui vous intéresse</label>
+              <select class="qf-select" id="jf-domain">
+                <option value="">Sélectionner —</option>
+                <option>Décoration &amp; scénographie</option>
+                <option>Art floral</option>
+                <option>Régie &amp; technique lumière</option>
+                <option>Logistique &amp; chauffeurs</option>
+                <option>Relation client &amp; coordination</option>
+                <option>Communication &amp; réseaux sociaux</option>
+                <option>Stage &amp; alternance</option>
+                <option>Freelance &amp; prestataire</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="jf-cv">Lien CV / portfolio (LinkedIn, Drive…)</label>
+              <input class="qf-input" type="text" id="jf-cv" placeholder="https://…" />
+            </div>
+            <div class="field field--full">
+              <label for="jf-msg">Quelques lignes sur ce qui vous anime</label>
+              <textarea class="qf-textarea" id="jf-msg" rows="4"></textarea>
+            </div>
+
+            <div class="cform__foot">
+              <p class="cform__note">Champs marqués * obligatoires. Vos informations ne servent qu'à étudier votre candidature.</p>
+              <button type="submit" class="btn btn--lg" id="jfSubmit" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
+                <span>Envoyer ma candidature</span>
+                <span class="arrow"><svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
+              </button>
+            </div>
+          </form>
+
+          <p class="cform__ok" id="jfOk"></p>
         </div>
       </div>
     </div>
@@ -397,6 +476,68 @@
     burger?.addEventListener("click", () => toggleDrawer());
     drawerClose?.addEventListener("click", () => toggleDrawer(false));
     drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => toggleDrawer(false)));
+
+    // ---------- Formulaire de candidature ----------
+    (function () {
+      const form = document.getElementById("jobForm");
+      if (!form) return;
+      const wrap = document.getElementById("jobFormWrap");
+      const okBox = document.getElementById("jfOk");
+      const submitBtn = document.getElementById("jfSubmit");
+      const openedAt = Date.now();
+      const EMAIL = "arcenciel.event.groupe@gmail.com";
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (submitBtn.disabled) return;
+        submitBtn.disabled = true;
+        submitBtn.querySelector("span:first-child").textContent = "Envoi en cours…";
+
+        const g = (id) => (document.getElementById(id)?.value || "").trim();
+        const data = {
+          "Type de demande": "Candidature — Nous rejoindre",
+          "Nom & prénom": g("jf-name"),
+          "Téléphone": g("jf-phone"),
+          "E-mail": g("jf-email"),
+          "Ville": g("jf-city"),
+          "Domaine souhaité": g("jf-domain"),
+          "CV / Portfolio": g("jf-cv"),
+          "Message": g("jf-msg"),
+        };
+        const lines = ["NOUVELLE CANDIDATURE — ARC EN CIEL", ""];
+        Object.entries(data).forEach(([k, v]) => { if (v) lines.push(k + " : " + v); });
+        lines.push("", "— Envoyé depuis le formulaire « Nous rejoindre » du site.");
+        const brief = lines.join("\n");
+        const subject = "Candidature — Nous rejoindre — " + (data["Nom & prénom"] || "Sans nom");
+
+        let delivered = false;
+        try {
+          const r = await fetch("/api/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              data,
+              brief,
+              company_website: document.getElementById("jf-hp").value,
+              elapsed: Date.now() - openedAt,
+            }),
+          });
+          const j = await r.json().catch(() => ({}));
+          delivered = r.ok && j.ok === true;
+        } catch (err) { delivered = false; }
+
+        if (!delivered) {
+          window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(brief);
+        }
+
+        okBox.textContent = delivered
+          ? "Merci — votre candidature vient d'être transmise à l'équipe Arc en Ciel. Nous revenons vers vous sous quelques jours."
+          : "Votre messagerie s'est ouverte avec le récapitulatif de votre candidature — il ne reste qu'à l'envoyer.";
+        wrap.classList.add("is-sent");
+        form.querySelectorAll("input, select, textarea, button").forEach((el) => (el.disabled = true));
+        okBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    })();
   </script>
 
 </body>

@@ -313,23 +313,111 @@
     </div>
   </section>
 
-  <!-- ========== CTA · Devenez partenaire ========== -->
-  <section class="cta" id="devenir-partenaire" data-screen-label="Devenez partenaire">
+  <!-- ========== Devenez partenaire ========== -->
+  <section class="section qf-section" id="devenir-partenaire" data-screen-label="Devenez partenaire">
+    <aside class="sidebar-rail" aria-hidden="true">
+      <span class="tag">ARC EN CIEL</span>
+      <div class="vlabels">
+        <span class="vlabel">Exigence</span>
+        <span class="vlabel is-current">Partenaire</span>
+        <span class="vlabel">Contact</span>
+      </div>
+      <span class="num">04</span>
+    </aside>
+    <span class="section-num">04</span>
+
     <div class="wrap">
-      <div class="cta__inner reveal">
-        <span class="eyebrow cta__eyebrow">Rejoindre le réseau</span>
-        <h2 class="cta__title">Devenez notre<br/><em>partenaire</em>.</h2>
-        <p class="cta__sub">
-          Présentez-nous votre structure — domaine d'activité, zone d'intervention, quelques références ou un lien vers votre travail. Nous revenons vers vous pour un premier échange, au Cameroun ou en France.
-        </p>
-        <div class="cta__ctas">
-          <a href="mailto:arcenciel.event.groupe@gmail.com?subject=Devenir%20partenaire%20%E2%80%94%20Arc%20en%20Ciel&body=Bonjour%2C%0A%0ANom%20de%20la%20structure%20%3A%20%0ADomaine%20d'activit%C3%A9%20%3A%20%0AZone%20d'intervention%20%3A%20%0ALien%20portfolio%20%2F%20r%C3%A9f%C3%A9rences%20%3A%20%0A%0AMessage%20%3A%20%0A" class="btn btn--lg" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
-            <span>Devenez notre partenaire</span>
-            <span class="arrow"><svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
-          </a>
-          <a href="https://wa.me/237653267335?text=Bonjour%20Arc%20en%20Ciel%2C%20je%20souhaite%20devenir%20partenaire%20(pr%C3%A9sentation%20de%20ma%20structure)." target="_blank" rel="noopener" class="btn btn--lg btn--ghost">
-            <span>Nous écrire sur WhatsApp</span>
-          </a>
+      <div class="section__inner">
+        <div class="sec-head reveal">
+          <div class="sec-head__left">
+            <span class="eyebrow">04 — Rejoindre le réseau</span>
+            <h2 class="h1 sec-head__title">Devenez notre <em>partenaire</em>.</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lede">
+              Présentez-nous votre structure. Nous revenons vers vous pour un premier échange, au Cameroun ou en France.
+            </p>
+          </div>
+        </div>
+
+        <div class="cform-wrap reveal" id="partnerFormWrap">
+          <div class="cform-aside">
+            <div class="cform-aside__block">
+              <h4>Ce que nous regardons</h4>
+              <p>Fiabilité, qualité d'exécution, disponibilité aux dates clés et quelques références ou exemples de votre travail.</p>
+            </div>
+            <div class="cform-aside__block">
+              <h4>Nous écrire directement</h4>
+              <a href="mailto:arcenciel.event.groupe@gmail.com">arcenciel.event.groupe@gmail.com</a>
+              <a href="https://wa.me/237653267335?text=Bonjour%20Arc%20en%20Ciel%2C%20je%20souhaite%20devenir%20partenaire%20(pr%C3%A9sentation%20de%20ma%20structure).">WhatsApp — +237 6 53 26 73 35</a>
+            </div>
+          </div>
+
+          <form class="cform" id="partnerForm" novalidate autocomplete="on">
+            <div class="qf-hp" aria-hidden="true">
+              <label for="pf-hp">Votre site web</label>
+              <input type="text" id="pf-hp" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="field field--full">
+              <label for="pf-structure">Nom de la structure *</label>
+              <input class="qf-input" type="text" id="pf-structure" required />
+            </div>
+            <div class="field">
+              <label for="pf-domain">Domaine d'activité</label>
+              <select class="qf-select" id="pf-domain">
+                <option value="">Sélectionner —</option>
+                <option>Traiteur &amp; art culinaire</option>
+                <option>Fleuriste &amp; pépinière</option>
+                <option>Photographe &amp; vidéaste</option>
+                <option>DJ, orchestre &amp; sonorisation</option>
+                <option>Location mobilier &amp; structures</option>
+                <option>Transport &amp; logistique</option>
+                <option>Lieu de réception</option>
+                <option>Sécurité &amp; régie technique</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pf-zone">Zone d'intervention</label>
+              <select class="qf-select" id="pf-zone">
+                <option value="">Sélectionner —</option>
+                <option>Cameroun</option>
+                <option>France</option>
+                <option>International</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pf-name">Nom du contact *</label>
+              <input class="qf-input" type="text" id="pf-name" required />
+            </div>
+            <div class="field">
+              <label for="pf-phone">Téléphone *</label>
+              <input class="qf-input" type="tel" id="pf-phone" required />
+            </div>
+            <div class="field field--full">
+              <label for="pf-email">E-mail</label>
+              <input class="qf-input" type="email" id="pf-email" />
+            </div>
+            <div class="field field--full">
+              <label for="pf-link">Lien portfolio / site / Instagram</label>
+              <input class="qf-input" type="text" id="pf-link" placeholder="https://…" />
+            </div>
+            <div class="field field--full">
+              <label for="pf-msg">Message</label>
+              <textarea class="qf-textarea" id="pf-msg" rows="4" placeholder="Quelques références, disponibilités, ce que vous proposez…"></textarea>
+            </div>
+
+            <div class="cform__foot">
+              <p class="cform__note">Champs marqués * obligatoires. Par discrétion, nous ne partageons pas ces informations à des tiers.</p>
+              <button type="submit" class="btn btn--lg" id="pfSubmit" style="--bg: var(--maron); --bd: var(--maron); color: var(--white);">
+                <span>Devenez notre partenaire</span>
+                <span class="arrow"><svg width="16" height="11" viewBox="0 0 14 10" fill="none"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
+              </button>
+            </div>
+          </form>
+
+          <p class="cform__ok" id="pfOk"></p>
         </div>
       </div>
     </div>
@@ -438,6 +526,69 @@
     burger?.addEventListener("click", () => toggleDrawer());
     drawerClose?.addEventListener("click", () => toggleDrawer(false));
     drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => toggleDrawer(false)));
+
+    // ---------- Formulaire partenaire ----------
+    (function () {
+      const form = document.getElementById("partnerForm");
+      if (!form) return;
+      const wrap = document.getElementById("partnerFormWrap");
+      const okBox = document.getElementById("pfOk");
+      const submitBtn = document.getElementById("pfSubmit");
+      const openedAt = Date.now();
+      const EMAIL = "arcenciel.event.groupe@gmail.com";
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (submitBtn.disabled) return;
+        submitBtn.disabled = true;
+        submitBtn.querySelector("span:first-child").textContent = "Envoi en cours…";
+
+        const g = (id) => (document.getElementById(id)?.value || "").trim();
+        const data = {
+          "Type de demande": "Devenir partenaire",
+          "Structure": g("pf-structure"),
+          "Domaine d'activité": g("pf-domain"),
+          "Zone d'intervention": g("pf-zone"),
+          "Nom & prénom": g("pf-name"),
+          "Téléphone": g("pf-phone"),
+          "E-mail": g("pf-email"),
+          "Portfolio / Références": g("pf-link"),
+          "Message": g("pf-msg"),
+        };
+        const lines = ["NOUVELLE DEMANDE DE PARTENARIAT — ARC EN CIEL", ""];
+        Object.entries(data).forEach(([k, v]) => { if (v) lines.push(k + " : " + v); });
+        lines.push("", "— Envoyé depuis le formulaire « Devenez partenaire » du site.");
+        const brief = lines.join("\n");
+        const subject = "Devenir partenaire — " + (data["Structure"] || data["Nom & prénom"] || "Sans nom");
+
+        let delivered = false;
+        try {
+          const r = await fetch("/api/lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              data,
+              brief,
+              company_website: document.getElementById("pf-hp").value,
+              elapsed: Date.now() - openedAt,
+            }),
+          });
+          const j = await r.json().catch(() => ({}));
+          delivered = r.ok && j.ok === true;
+        } catch (err) { delivered = false; }
+
+        if (!delivered) {
+          window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(brief);
+        }
+
+        okBox.textContent = delivered
+          ? "Merci — votre présentation vient d'être transmise à l'équipe Arc en Ciel. Nous revenons vers vous pour un premier échange."
+          : "Votre messagerie s'est ouverte avec le récapitulatif — il ne reste qu'à l'envoyer.";
+        wrap.classList.add("is-sent");
+        form.querySelectorAll("input, select, textarea, button").forEach((el) => (el.disabled = true));
+        okBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    })();
   </script>
 
 </body>
